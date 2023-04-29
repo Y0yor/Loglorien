@@ -1,0 +1,355 @@
+{
+    "tactic": "Collection",
+    "techniques": [
+        {
+            "technique_id": "T1557",
+            "technique_name": "Adversary-in-the-Middle",
+            "sub_techniques": [
+              {
+                "sub_technique_id": "T1557.001",
+                "sub_technique_name": "LLMNR/NBT-NS Poisoning and SMB Relay",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1557.002",
+                "sub_technique_name": "ARP Cache Poisoning",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1557.003",
+                "sub_technique_name": "DHCP Spoofing",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              }
+            ]
+          },
+          {
+            "technique_id": "T1560",
+            "technique_name": "Archive Collected Data",
+            "sub_techniques": [
+              {
+                "sub_technique_id": "T1560.001",
+                "sub_technique_name": "Archive via Utility",
+                "windows_eventids": [
+                  {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                  }
+                ],
+                "linux_auditd_logs": [
+                  {
+                    "type": "EXECVE",
+                    "description": "Execution of the command using archive utility"
+                  }
+                ]
+              },
+              {
+                "sub_technique_id": "T1560.002",
+                "sub_technique_name": "Archive via Library",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1560.003",
+                "sub_technique_name": "Archive via Custom Method",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              }
+            ]
+          },
+          {
+            "technique_id": "T1123",
+            "technique_name": "Audio Capture",
+            "windows_eventids": [],
+            "linux_auditd_logs": [
+              {
+                "type": "SYSCALL",
+                "description": "System call associated with audio capture devices"
+              }
+            ]
+          },
+          {
+            "technique_id": "T1119",
+            "technique_name": "Automated Collection",
+            "windows_eventids": [
+              {
+                "eventid": "4688",
+                "description": "A new process has been created"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "type": "EXECVE",
+                "description": "Execution of automated collection command"
+              }
+            ]
+          },
+          {
+            "technique_id": "T1185",
+            "technique_name": "Browser Session Hijacking",
+            "windows_eventids": [],
+            "linux_auditd_logs": []
+          },
+          {
+            "technique_id": "T1115",
+            "technique_name": "Clipboard Data",
+            "windows_eventids": [],
+            "linux_auditd_logs": []
+          },
+          {
+            "technique_id": "T1538",
+            "technique_name": "Data from Cloud Storage",
+            "windows_eventids": [
+              {
+                "eventid": "5145",
+                "description": "A network share object was checked to see whether client can be granted desired access"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "type": "CWD",
+                "description": "Current working directory of the process accessing cloud storage"
+              },
+              {
+                "type": "PATH",
+                "description": "Path of the cloud storage being accessed"
+              },
+              {
+                "type": "SYSCALL",
+                "description": "System call associated with accessing cloud storage"
+              }
+            ]
+          },
+          {
+            "technique_id": "T1602",
+            "technique_name": "Data from Configuration Repository",
+            "sub_techniques": [
+              {
+                "sub_technique_id": "T1602.001",
+                "sub_technique_name": "SNMP (MIB Dump)",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1602.002",
+                "sub_technique_name": "Network Device Configuration Dump",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              }
+            ]
+          },
+          {
+            "technique_id": "T1213",
+            "technique_name": "Data from Information Repositories",
+            "sub_techniques": [
+              {
+                "sub_technique_id": "T1213.001",
+                "sub_technique_name": "Confluence",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1213.002",
+                "sub_technique_name": "Sharepoint",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1213.003",
+                "sub_technique_name": "Code Repositories",
+                "windows_eventids": [],
+                "linux_auditd_logs": [
+                  {
+                    "type": "EXECVE",
+                    "description": "Execution of commands accessing code repositories"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "technique_id": "T1005",
+            "technique_name": "Data from Local System",
+            "windows_eventids": [
+              {
+                "eventid": "4656",
+                "description": "A handle to an object was requested"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "type": "PATH",
+                "description": "Path of the local file being accessed"
+              },
+              {
+                "type": "SYSCALL",
+                "description": "System call associated with accessing local files"
+              }
+            ]
+          },
+          {
+            "technique_id": "T1039",
+            "technique_name": "Data from Network Shared Drive",
+            "windows_eventids": [
+              {
+                "eventid": "5145",
+                "description": "A network share object was checked to see whether client can be granted desired access"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "type": "PATH",
+                "description": "Path of the network shared drive being accessed"
+              },
+              {
+                "type": "SYSCALL",
+                "description": "System call associated with accessing network shared drive"
+              }
+            ]
+          },
+          {
+            "technique_id": "T1025",
+            "technique_name": "Data from Removable Media",
+            "windows_eventids": [
+              {
+                "eventid": "4663",
+                "description": "An attempt was made to access an object"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "type": "PATH",
+                "description": "Path of the removable media being accessed"
+              },
+              {
+                "type": "SYSCALL",
+                "description": "System call associated with accessing removable media"
+              }
+            ]
+          },
+          {
+            "technique_id": "T1074",
+            "technique_name": "Data Staged",
+            "sub_techniques": [
+              {
+                "sub_technique_id": "T1074.001",
+                "sub_technique_name": "Local Data Staging",
+                "windows_eventids": [
+                  {
+                    "eventid": "4656",
+                    "description": "A handle to an object was requested"
+                  }
+                ],
+                "linux_auditd_logs": [
+                  {
+                    "type": "PATH",
+                    "description": "Path of the local file being staged"
+                  },
+                  {
+                    "type": "SYSCALL",
+                    "description": "System call associated with staging local files"
+                  }
+                ]
+              },
+              {
+                "sub_technique_id": "T1074.002",
+                "sub_technique_name": "Remote Data Staging",
+                "windows_eventids": [
+                  {
+                    "eventid": "5145",
+                    "description": "A network share object was checked to see whether client can be granted desired access"
+                  }
+                ],
+                "linux_auditd_logs": [
+                  {
+                    "type": "PATH",
+                    "description": "Path of the remote file being staged"
+                  },
+                  {
+                    "type": "SYSCALL",
+                    "description": "System call associated with staging remote files"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "technique_id": "T1114",
+            "technique_name": "Email Collection",
+            "sub_techniques": [
+              {
+                "sub_technique_id": "T1114.001",
+                "sub_technique_name": "Local Email Collection",
+                "windows_eventids": [
+                  {
+                    "eventid": "4656",
+                    "description": "A handle to an object was requested"
+                  }
+                ],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1114.002",
+                "sub_technique_name": "Remote Email Collection",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1114.003",
+                "sub_technique_name": "Email Forwarding Rule",
+                "windows_eventids": [
+                  {
+                    "eventid": "4666",
+                    "description": "An operation was performed on an object"
+                  }
+                ],
+                "linux_auditd_logs": []
+              }
+            ]
+          },
+          {
+            "technique_id": "T1056",
+            "technique_name": "Input Capture",
+            "sub_techniques": [
+              {
+                "sub_technique_id": "T1056.001",
+                "sub_technique_name": "Keylogging",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1056.002",
+                "sub_technique_name": "GUI Input Capture",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1056.003",
+                "sub_technique_name": "Web Portal Capture",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1056.004",
+                "sub_technique_name": "Credential API Hooking",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              }
+            ]
+          },
+          {
+            "technique_id": "T1113",
+            "technique_name": "Screen Capture",
+            "windows_eventids": [],
+            "linux_auditd_logs": []
+          },
+          {
+            "technique_id": "T1125",
+            "technique_name": "Video Capture",
+            "windows_eventids": [],
+            "linux_auditd_logs": []
+          }
+    ]
+  }

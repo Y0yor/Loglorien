@@ -1,0 +1,561 @@
+{
+    "tactic": "Lateral Movement",
+    "techniques": [
+      {
+        "technique_id": "T1210",
+        "technique_name": "Exploitation of Remote Services",
+        "windows_eventids": [
+          {
+            "eventid": "4688",
+            "description": "A new process has been created"
+          },
+          {
+            "eventid": "4624",
+            "description": "An account was successfully logged on"
+          },
+          {
+            "eventid": "5145",
+            "description": "A network share object was checked to see whether the client can be granted desired access"
+          }
+        ],
+        "linux_auditd_logs": [
+          {
+            "type": "ACCEPT",
+            "description": "A socket received a network connection"
+          },
+          {
+            "type": "SYSCALL",
+            "description": "A system call was invoked"
+          },
+          {
+            "type": "USER_AUTH",
+            "description": "A user's authentication was attempted"
+          },
+          {
+            "type": "CRED_ACQ",
+            "description": "A user's credentials were acquired"
+          },
+          {
+            "type": "CRED_DISP",
+            "description": "A user's credentials were used"
+          }
+        ],
+        "sub_techniques": []
+      },
+      {
+        "technique_id": "T1219",
+        "technique_name": "Internal Spearphishing",
+        "windows_eventids": [
+          {
+            "eventid": "1028",
+            "description": "An application attempted to send an email"
+          },
+          {
+            "eventid": "1030",
+            "description": "A mailbox was accessed"
+          },
+          {
+            "eventid": "1102",
+            "description": "The audit log was cleared"
+          }
+        ],
+        "linux_auditd_logs": [
+          {
+            "type": "LOGIN",
+            "description": "A user has logged in"
+          },
+          {
+            "type": "USER_LOGIN",
+            "description": "A user session has started"
+          },
+          {
+            "type": "USER_START",
+            "description": "A user session has been started"
+          },
+          {
+            "type": "USER_END",
+            "description": "A user session has ended"
+          },
+          {
+            "type": "CRED_ACQ",
+            "description": "A user's credentials were acquired"
+          }
+        ],
+        "sub_techniques": []
+      },
+      {
+        "technique_id": "T1570",
+        "technique_name": "Lateral Tool Transfer",
+        "windows_eventids": [
+          {
+            "eventid": "5145",
+            "description": "A network share object was checked to see whether the client can be granted desired access"
+          }
+        ],
+        "linux_auditd_logs": [
+          {
+            "type": "FANOTIFY",
+            "description": "A fanotify event occurred"
+          },
+          {
+            "type": "PATH",
+            "description": "A file or directory was accessed"
+          },
+          {
+            "type": "PROCTITLE",
+            "description": "A process title was changed"
+          },
+          {
+            "type": "CWD",
+            "description": "A process changed its current working directory"
+          },
+          {
+            "type": "EXECVE",
+            "description": "A process executed a new program"
+          }
+        ],
+        "sub_techniques": []
+      },
+      {
+        "technique_id": "T1563",
+        "technique_name": "Remote Service Session Hijacking",
+        "windows_eventids": [],
+        "linux_auditd_logs": [],
+        "sub_techniques": [
+          {
+            "sub_technique_id": "T1563.001",
+            "sub_technique_name": "SSH Hijacking",
+            "windows_eventids": [
+                {
+                  "eventid": "21",
+                  "description": "An account was successfully logged on"
+                },
+                {
+                  "eventid": "23",
+                  "description": "A logon session was terminated"
+                },
+                {
+                  "eventid": "24",
+                  "description": "A user initiated logoff"
+                },
+                {
+                  "eventid": "25",
+                  "description": "A user initiated a reconnect to a disconnected session"
+                },
+                {
+                  "eventid": "4778",
+                  "description": "A session was reconnected to a Window Station"
+                },
+                {
+                  "eventid": "4779",
+                  "description": "A session was disconnected from a Window Station"
+                }
+            ],
+            "linux_auditd_logs": [
+              {
+                "type": "USER_AUTH",
+                "description": "A user's authentication was attempted"
+              },
+              {
+                "type": "USER_LOGIN",
+                "description": "A user session has started"
+              },
+              {
+                "type": "USER_START",
+                "description": "A user session has been started"
+              },
+              {
+                "type": "USER_END",
+                "description": "A user session has ended"
+              },
+              {
+                "type": "CRED_ACQ",
+                "description": "A user's credentials were acquired"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1563.002",
+            "sub_technique_name": "RDP Hijacking",
+            "windows_eventids": [
+              {
+                "eventid": "4624",
+                "description": "An account was successfully logged on"
+              },
+              {
+                "eventid": "4634",
+                "description": "An account was logged off"
+              },
+              {
+                "eventid": "4778",
+                "description": "A session was reconnected to a Window Station"
+              },
+              {
+                "eventid": "4779",
+                "description": "A session was disconnected from a Window Station"
+              },
+              {
+                "eventid": "4825",
+                "description": "Denied RDP login with valid credentials"
+              }
+            ],
+            "linux_auditd_logs": []
+          }
+        ]
+      },
+      {
+        "technique_id": "T1021",
+        "technique_name": "Remote Services",
+        "windows_eventids": [
+          {
+            "eventid": "4648",
+            "description": "A logon was attempted using explicit credentials"
+          },
+          {
+            "eventid": "4024",
+            "description": "A session was disconnected from a Window Station"
+          },
+          {
+            "eventid": "1102",
+            "description": "The audit log was cleared"
+          }
+        ],
+        "linux_auditd_logs": [],
+        "sub_techniques": [
+          {
+            "sub_technique_id": "T1021.001",
+            "sub_technique_name": "Remote Desktop Protocol",
+            "windows_eventids": [
+              {
+                "eventid": "1149",
+                "description": "Remote Desktop Services: User authentication succeeded"
+              },
+              {
+                "eventid": "21",
+                "description": "Remote Desktop Services: Session logon succeeded"
+              },
+              {
+                "eventid": "22",
+                "description": "Remote Desktop Services: Shell start notification received"
+              },
+              {
+                "eventid": "25",
+                "description": "Remote Desktop Services: Session reconnection succeeded"
+              },
+              {
+                "eventid": "41",
+                "description": "Remote Desktop Services: Session logoff succeeded"
+              },
+              {
+                "eventid": "4825",
+                "description": "Denied RDP login with valid credentials"
+              }
+            ],
+            "linux_auditd_logs": []
+          },
+          {
+            "sub_technique_id": "T1021.002",
+            "sub_technique_name": "SMB/Windows Admin Shares",
+            "windows_eventids": [
+              {
+                "eventid": "4648",
+                "description": "A logon was attempted using explicit credentials"
+              },
+              {
+                "eventid": "31001",
+                "description": "Offline Files: File Server is not registered on the Offline Files Client"
+              },
+              {
+                "eventid": "4624",
+                "description": "An account was successfully logged on"
+              },
+              {
+                "eventid": "4625",
+                "description": "An account failed to log on"
+              },
+              {
+                "eventid": "528",
+                "description": "Successful Logon"
+              },
+              {
+                "eventid": "529",
+                "description": "Logon Failure - Unknown user name or bad password"
+              },
+              {
+                "eventid": "4672",
+                "description": "Special privileges assigned to new logon"
+              },
+              {
+                "eventid": "4776",
+                "description": "The domain controller attempted to validate the credentials for an account"
+              },
+              {
+                "eventid": "4768",
+                "description": "A Kerberos authentication ticket (TGT) was requested"
+              },
+              {
+                "eventid": "4769",
+                "description": "A Kerberos service ticket was requested"
+              },
+              {
+                "eventid": "5140",
+                "description": "A network share object was accessed"
+              },
+              {
+                "eventid": "5145",
+                "description": "A network share object was checked to see whether client can be granted desired access"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "type": "CIFS",
+                "description": "SMB/CIFS activities in Linux environment"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1021.003",
+            "sub_technique_name": "Distributed Component Object Model",
+            "windows_eventids": [
+              {
+                "eventid": "4688",
+                "description": "A new process has been created"
+              }
+            ],
+            "linux_auditd_logs": []
+          },
+          {
+            "sub_technique_id": "T1021.004",
+            "sub_technique_name": "SSH",
+            "windows_eventids": [
+              {
+                "eventid": "21",
+                "description": "An account was successfully logged on"
+              },
+              {
+                "eventid": "23",
+                "description": "A logon session was terminated"
+              },
+              {
+                "eventid": "24",
+                "description": "A user initiated logoff"
+              },
+              {
+                "eventid": "25",
+                "description": "A user initiated a reconnect to a disconnected session"
+              },
+              {
+                "eventid": "4624",
+                "description": "An account was successfully logged on"
+              },
+              {
+                "eventid": "4625",
+                "description": "An account failed to log on"
+              },
+              {
+                "eventid": "528",
+                "description": "Successful Logon"
+              },
+              {
+                "eventid": "529",
+                "description": "Logon Failure - Unknown user name or bad password"
+              },
+              {
+                "eventid": "4103",
+                "description": "OpenSSH server for Windows activation/configuration detected"
+              },
+              {
+                "eventid": "4104",
+                "description": "SSH server"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "type": "USER_AUTH",
+                "description": "A user's authentication was attempted"
+              },
+              {
+                "type": "USER_LOGIN",
+                "description": "A user session has started"
+              },
+              {
+                "type": "USER_START",
+                "description": "A user session has been started"
+              },
+              {
+                "type": "USER_END",
+                "description": "A user session has ended"
+              },
+              {
+                "type": "CRED_ACQ",
+                "description": "A user's credentials were acquired"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1021.005",
+            "sub_technique_name": "VNC",
+            "windows_eventids": [
+              {
+                "eventid": "4624",
+                "description": "An account was successfully logged on"
+              },
+              {
+                "eventid": "1149",
+                "description": "Remote Desktop Services: User authentication succeeded"
+              },
+              {
+                "eventid": "21",
+                "description": "Remote Desktop Services: Session logon succeeded"
+              },
+              {
+                "eventid": "22",
+                "description": "Remote Desktop Services: Shell start notification received"
+              },
+              {
+                "eventid": "25",
+                "description": "Remote Desktop Services: Session reconnection succeeded"
+              },
+              {
+                "eventid": "41",
+                "description": "Remote Desktop Services: Session logoff succeeded"
+              }
+            ],
+            "linux_auditd_logs": []
+          },
+          {
+            "sub_technique_id": "T1021.006",
+            "sub_technique_name": "Windows Remote Management",
+            "windows_eventids": [
+              {
+                "eventid": "4688",
+                "description": "A new process has been created"
+              },
+              {
+                "eventid": "4624",
+                "description": "An account was successfully logged on"
+              }
+            ],
+            "linux_auditd_logs": []
+          }
+        ]
+      },
+      {
+        "technique_id": "T1080",
+        "technique_name": "Taint Shared Content",
+        "windows_eventids": [
+          {
+            "eventid": "5140",
+            "description": "A network share object was accessed"
+          },
+          {
+            "eventid": "5145",
+            "description": "A network share object was checked to see whether the client can be granted desired access"
+          },
+          {
+            "eventid": "4663",
+            "description": "An attempt was made to access an object"
+          }
+        ],
+        "linux_auditd_logs": [
+          {
+            "type": "PATH",
+            "description": "File and directory operations"
+          },
+          {
+            "type": "PROCTITLE",
+            "description": "Process title and command line arguments"
+          },
+          {
+            "type": "CWD",
+            "description": "Current working directory of a process"
+          },
+          {
+            "type": "EXECVE",
+            "description": "Process execution and command line parameters"
+          }
+        ],
+        "sub_techniques": []
+      },
+      {
+        "technique_id": "T1550",
+        "technique_name": "Use Alternate Authentication Material",
+        "windows_eventids": [],
+        "linux_auditd_logs": [],
+        "sub_techniques": [
+          {
+            "sub_technique_id": "T1550.001",
+            "sub_technique_name": "Application Access Token",
+            "windows_eventids": [
+              {
+                "eventid": "4672",
+                "description": "Special privileges assigned to new logon"
+              },
+              {
+                "eventid": "4624",
+                "description": "An account was successfully logged on"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "type": "USER_AUTH",
+                "description": "User authentication events"
+              },
+              {
+                "type": "CRED_ACQ",
+                "description": "Credential acquisition events"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1550.002",
+            "sub_technique_name": "Pass the Hash",
+            "windows_eventids": [
+              {
+                "eventid": "4624",
+                "description": "An account was successfully logged on"
+              },
+              {
+                "eventid": "4672",
+                "description": "Special privileges assigned to new logon"
+              },
+              {
+                "eventid": "4776",
+                "description": "The domain controller attempted to validate the credentials for an account"
+              },
+              {
+                "eventid": "10",
+                "description": "Process Creation"
+              }
+            ],
+            "linux_auditd_logs": []
+          },
+          {
+            "sub_technique_id": "T1550.003",
+            "sub_technique_name": "Pass the Ticket",
+            "windows_eventids": [
+              {
+                "eventid": "4768",
+                "description": "A Kerberos authentication ticket (TGT) was requested"
+              },
+              {
+                "eventid": "4769",
+                "description": "A Kerberos service ticket was requested"
+              },
+              {
+                "eventid": "4770",
+                "description": "A Kerberos service ticket was renewed"
+              }
+            ],
+            "linux_auditd_logs": []
+          },
+          {
+            "sub_technique_id": "T1550.004",
+            "sub_technique_name": "Web Session Cookie",
+            "windows_eventids": [],
+            "linux_auditd_logs": []
+          }
+        ]
+      }
+    ]
+}

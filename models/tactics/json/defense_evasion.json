@@ -1,0 +1,1938 @@
+{
+    "tactic": "Defense Evasion",
+    "techniques": [
+        {
+            "technique_id": "T1197",
+            "technique_name": "BITS Jobs",
+            "windows_eventids": [
+              {
+                "eventid": "3",
+                "description": "A BITS job was created"
+              },
+              {
+                "eventid": "59",
+                "description": "BITS jobs history was deleted"
+              }
+            ],
+            "linux_auditd_logs": []
+          },
+          {
+            "technique_id": "T1548",
+            "technique_name": "Abuse Elevation Control Mechanism",
+            "sub_techniques": [
+              {
+                "sub_technique_id": "T1548.001",
+                "sub_technique_name": "Setuid and Setgid",
+                "windows_eventids": [],
+                "linux_auditd_logs": [
+                  {
+                    "log_rule": "type=SYSCALL",
+                    "description": "System call trace"
+                  },
+                  {
+                    "log_rule": "type=EXECVE",
+                    "description": "Execution of a command"
+                  },
+                  {
+                    "log_rule": "type=CRED_REFR",
+                    "description": "Refreshing of credential data"
+                  }
+                ]
+              },
+              {
+                "sub_technique_id": "T1548.002",
+                "sub_technique_name": "Bypass User Account Control",
+                "windows_eventids": [
+                  {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                  },
+                  {
+                    "eventid": "4697",
+                    "description": "A service was installed in the system"
+                  }
+                ],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1548.003",
+                "sub_technique_name": "Sudo and Sudo Caching",
+                "windows_eventids": [],
+                "linux_auditd_logs": [
+                  {
+                    "log_rule": "type=USER_CMD",
+                    "description": "A non-root user executed a command"
+                  },
+                  {
+                    "log_rule": "type=USER_START",
+                    "description": "A user session is starting"
+                  },
+                  {
+                    "log_rule": "type=CRED_REFR",
+                    "description": "Refreshing of credential data"
+                  }
+                ]
+              },
+              {
+                "sub_technique_id": "T1548.004",
+                "sub_technique_name": "Elevated Execution with Prompt",
+                "windows_eventids": [
+                  {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                  }
+                ],
+                "linux_auditd_logs": []
+              }
+            ]
+          },
+          {
+            "technique_id": "T1134",
+            "technique_name": "Access Token Manipulation",
+            "sub_techniques": [
+              {
+                "sub_technique_id": "T1134.001",
+                "sub_technique_name": "Token Impersonation/Theft",
+                "windows_eventids": [
+                  {
+                    "eventid": "4624",
+                    "description": "An account was successfully logged on"
+                  },
+                  {
+                    "eventid": "4672",
+                    "description": "Special privileges assigned to new logon"
+                  }
+                ],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1134.002",
+                "sub_technique_name": "Create Process with Token",
+                "windows_eventids": [
+                  {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                  }
+                ],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1134.003",
+                "sub_technique_name": "Make and Impersonate Token",
+                "windows_eventids": [
+                  {
+                    "eventid": "4672",
+                    "description": "Special privileges assigned to new logon"
+                  },
+                  {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                  }
+                ],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1134.004",
+                "sub_technique_name": "Parent PID Spoofing",
+                "windows_eventids": [
+                  {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                  }
+                ],
+                "linux_auditd_logs": [
+                  {
+                    "log_rule": "type=SYSCALL",
+                    "description": "System call trace"
+                  },
+                  {
+                    "log_rule": "type=EXECVE",
+                    "description": "Execution of a command"
+                  }
+                ]
+              },
+              {
+                "sub_technique_id": "T1134.005",
+                "sub_technique_name": "SID-History Injection",
+                "windows_eventids": [
+                  {
+                    "eventid": "4738",
+                    "description": "A user account was changed"
+                  },
+                  {
+                    "eventid": "4767",
+                    "description": "A user account was unlocked"
+                  }
+                ],
+                "linux_auditd_logs": []
+              }
+            ]
+          },
+          {
+            "technique_id": "T1612",
+            "technique_name": "Build Image on Host",
+            "windows_eventids": [
+              {
+                "eventid": "4688",
+                "description": "A new process has been created"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "log_rule": "type=EXECVE",
+                "description": "Execution of a command"
+              }
+            ]
+          },
+          {
+            "technique_id": "T1622",
+            "technique_name": "Debugger Evasion",
+            "windows_eventids": [
+              {
+                "eventid": "4688",
+                "description": "A new process has been created"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "log_rule": "type=EXECVE",
+                "description": "Execution of a command"
+              }
+            ]
+          },
+          {
+            "technique_id": "T1140",
+            "technique_name": "Deobfuscate/Decode Files or Information",
+            "windows_eventids": [
+              {
+                "eventid": "4688",
+                "description": "A new process has been created"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "log_rule": "type=EXECVE",
+                "description": "Execution of a command"
+              }
+            ]
+          },
+          {
+            "technique_id": "T1610",
+            "technique_name": "Deploy Container",
+            "windows_eventids": [],
+            "linux_auditd_logs": [
+              {
+                "log_rule": "type=EXECVE",
+                "description": "Execution of a command"
+              },
+              {
+                "log_rule": "type=USER_CMD",
+                "description": "A non-privileged user ran a command"
+              }
+            ]
+          },
+          {
+            "technique_id": "T1006",
+            "technique_name": "Direct Volume Access",
+            "windows_eventids": [
+              {
+                "eventid": "4697",
+                "description": "A service was installed in the system"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "log_rule": "type=SYSCALL",
+                "description": "System call trace"
+              }
+            ]
+          },
+          {
+            "technique_id": "T1484",
+            "technique_name": "Domain Policy Modification",
+            "sub_techniques": [
+              {
+                "sub_technique_id": "T1484.001",
+                "sub_technique_name": "Group Policy Modification",
+                "windows_eventids": [
+                  {
+                    "eventid": "4739",
+                    "description": "Domain Policy was changed"
+                  }
+                ],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1484.002",
+                "sub_technique_name": "Domain Trust Modification",
+                "windows_eventids": [
+                  {
+                    "eventid": "4706",
+                    "description": "A new trust was created to a domain"
+                  },
+                  {
+                    "eventid": "4707",
+                    "description": "A trust to a domain was removed"
+                  }
+                ],
+                "linux_auditd_logs": []
+              }
+            ]
+          },
+          {
+            "technique_id": "T1627",
+            "technique_name": "Execution Guardrails",
+            "sub_techniques": [
+              {
+                "sub_technique_id": "T1627.001",
+                "sub_technique_name": "Environmental Keying",
+                "windows_eventids": [
+                  {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                  }
+                ],
+                "linux_auditd_logs": [
+                  {
+                    "log_rule": "type=EXECVE",
+                    "description": "Execution of a command"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "technique_id": "T1211",
+            "technique_name": "Exploitation for Defense Evasion",
+            "windows_eventids": [
+              {
+                "eventid": "4688",
+                "description": "A new process has been created"
+              },
+              {
+                "eventid": "1001",
+                "description": "An application crash was detected"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "log_rule": "type=EXECVE",
+                "description": "Execution of a command"
+              },
+              {
+                "log_rule": "type=ANOM_ABEND",
+                "description": "A process ended abnormally"
+              }
+            ]
+          },
+          {
+            "technique_id": "T1222",
+            "technique_name": "File and Directory Permissions Modification",
+            "sub_techniques": [
+              {
+                "sub_technique_id": "T1222.001",
+                "sub_technique_name": "Windows File and Directory Permissions Modification",
+                "windows_eventids": [
+                  {
+                    "eventid": "4663",
+                    "description": "An attempt was made to access an object"
+                  },
+                  {
+                    "eventid": "4670",
+                    "description": "Permissions on an object were changed"
+                  }
+                ],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1222.002",
+                "sub_technique_name": "Linux and Mac File and Directory Permissions Modification",
+                "windows_eventids": [],
+                "linux_auditd_logs": [
+                  {
+                    "type": "SYSCALL",
+                    "description": "System call used to modify file or directory permissions (e.g., chmod, chown)"
+                  },
+                  {
+                    "type": "PATH",
+                    "description": "Path of the file or directory being modified"
+                  },
+                  {
+                    "type": "CWD",
+                    "description": "Current working directory of the process modifying permissions"
+                  },
+                  {
+                    "type": "PROCTITLE",
+                    "description": "Title of the process modifying permissions"
+                  },
+                  {
+                    "type": "EXECVE",
+                    "description": "Execution of the command modifying permissions"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "technique_id": "T1564",
+            "technique_name": "Hide Artifacts",
+            "sub_techniques": [
+              {
+                "sub_technique_id": "T1564.001",
+                "sub_technique_name": "Hidden Files and Directories",
+                "windows_eventids": [
+                  {
+                    "eventid": "4663",
+                    "description": "An attempt was made to access an object"
+                  },
+                  {
+                    "eventid": "7036",
+                    "description": "The Windows File System was modified"
+                  }
+                ],
+                "linux_auditd_logs": [
+                  {
+                    "type": "SYSCALL",
+                    "description": "System call used to modify file or directory attributes (e.g., chattr)"
+                  },
+                  {
+                    "type": "PATH",
+                    "description": "Path of the file or directory being modified"
+                  },
+                  {
+                    "type": "CWD",
+                    "description": "Current working directory of the process modifying attributes"
+                  },
+                  {
+                    "type": "PROCTITLE",
+                    "description": "Title of the process modifying attributes"
+                  },
+                  {
+                    "type": "EXECVE",
+                    "description": "Execution of the command modifying attributes"
+                  }
+                ]
+              },
+              {
+                "sub_technique_id": "T1564.002",
+                "sub_technique_name": "Hidden Users",
+                "windows_eventids": [
+                  {
+                    "eventid": "4720",
+                    "description": "A user account was created"
+                  },
+                  {
+                    "eventid": "4722",
+                    "description": "A user account was enabled"
+                  },
+                  {
+                    "eventid": "4723",
+                    "description": "An attempt was made to change an account's password"
+                  }
+                ],
+                "linux_auditd_logs": [
+                  {
+                    "type": "ADD_USER",
+                    "description": "User account creation or modification"
+                  },
+                  {
+                    "type": "USER_MGMT",
+                    "description": "User account management events"
+                  },
+                  {
+                    "type": "CRED_ACQ",
+                    "description": "User authentication events"
+                  }
+                ]
+              },
+              {
+                "sub_technique_id": "T1564.003",
+                "sub_technique_name": "Hidden Window",
+                "windows_eventids": [
+                  {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                  }
+                ],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1564.004",
+                "sub_technique_name": "NTFS File Attributes",
+                "windows_eventids": [
+                  {
+                    "eventid": "4663",
+                    "description": "An attempt was made to access an object"
+                  },
+                  {
+                    "eventid": "7036",
+                    "description": "The Windows File System was modified"
+                  }
+                ],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1564.005",
+                "sub_technique_name": "Hidden File System",
+                "windows_eventids": [
+                  {
+                    "eventid": "7036",
+                    "description": "The Windows File System was modified"
+                  }
+                ],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1564.006",
+                "sub_technique_name": "Run Virtual Instance",
+                "windows_eventids": [
+                  {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                  },
+                  {
+                    "eventid": "7036",
+                    "description": "The Windows Virtualization Service was modified"
+                  }
+                ],
+                "linux_auditd_logs": [
+                  {
+                    "type": "SYSCALL",
+                    "description": "System call for virtual machine management (e.g., virsh, qemu)"
+                  },
+                  {
+                    "type": "PATH",
+                    "description": "Path of the virtual machine management command"
+                  },
+                  {
+                    "type": "CWD",
+                    "description": "Current working directory of the process managing virtual machines"
+                  },
+                  {
+                    "type": "PROCTITLE",
+                    "description": "Title of the process managing virtual machines"
+                  },
+                  {
+                    "type": "EXECVE",
+                    "description": "Execution of the command managing virtual machines"
+                  }
+                ]
+              },
+              {
+                "sub_technique_id": "T1564.007",
+                "sub_technique_name": "VBA Stomping",
+                "windows_eventids": [
+                  {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                  }
+                ],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1564.008",
+                "sub_technique_name": "Email Hiding Rules",
+                "windows_eventids": [
+                  {
+                    "eventid": "300",
+                    "description": "A new Outlook rule was created"
+                  }
+                ],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1564.009",
+                "sub_technique_name": "Resource Forking",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1564.010",
+                "sub_technique_name": "Process Argument Spoofing",
+                "windows_eventids": [
+                  {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                  }
+                ],
+                "linux_auditd_logs": [
+                  {
+                    "type": "SYSCALL",
+                    "description": "System call for process creation with spoofed arguments"
+                  },
+                  {
+                    "type": "PATH",
+                    "description": "Path of the process being created"
+                  },
+                  {
+                    "type": "CWD",
+                    "description": "Current working directory of the process creating the new process"
+                  },
+                  {
+                    "type": "PROCTITLE",
+                    "description": "Title of the process creating the new process"
+                  },
+                  {
+                    "type": "EXECVE",
+                    "description": "Execution of the command creating the new process"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tactic": "Defense Evasion",
+            "techniques": [
+              {
+                "technique_id": "T1562",
+                "technique_name": "Impair Defenses",
+                "sub_techniques": [
+                  {
+                    "sub_technique_id": "T1562.001",
+                    "sub_technique_name": "Disable or Modify Tools",
+                    "windows_eventids": [
+                      {
+                        "eventid": "7045",
+                        "description": "A service was installed in the system"
+                      },
+                      {
+                        "eventid": "4688",
+                        "description": "A new process has been created"
+                      }
+                    ],
+                    "linux_auditd_logs": [
+                      {
+                        "type": "SYSCALL",
+                        "description": "System call for disabling or modifying security tools"
+                      },
+                      {
+                        "type": "PATH",
+                        "description": "Path of the security tool being modified or disabled"
+                      },
+                      {
+                        "type": "CWD",
+                        "description": "Current working directory of the process modifying or disabling the security tool"
+                      },
+                      {
+                        "type": "PROCTITLE",
+                        "description": "Title of the process modifying or disabling the security tool"
+                      },
+                      {
+                        "type": "EXECVE",
+                        "description": "Execution of the command modifying or disabling the security tool"
+                      }
+                    ]
+                  },
+                  {
+                    "sub_technique_id": "T1562.002",
+                    "sub_technique_name": "Disable Windows Event Logging",
+                    "windows_eventids": [
+                      {
+                        "eventid": "1102",
+                        "description": "The audit log was cleared"
+                      }
+                    ],
+                    "linux_auditd_logs": []
+                  },
+                  {
+                    "sub_technique_id": "T1562.003",
+                    "sub_technique_name": "Impair Command History Logging",
+                    "windows_eventids": [],
+                    "linux_auditd_logs": [
+                      {
+                        "type": "USER_CMD",
+                        "description": "Commands executed by the user"
+                      },
+                      {
+                        "type": "EXECVE",
+                        "description": "Execution of the command modifying shell history settings"
+                      }
+                    ]
+                  },
+                  {
+                    "sub_technique_id": "T1562.004",
+                    "sub_technique_name": "Disable or Modify System Firewall",
+                    "windows_eventids": [
+                      {
+                        "eventid": "4950",
+                        "description": "A Windows Firewall setting has changed"
+                      },
+                      {
+                        "eventid": "4954",
+                        "description": "Windows Firewall Group Policy settings have changed"
+                      },
+                      {
+                        "eventid": "4956",
+                        "description": "Windows Firewall has changed the active profile"
+                      }
+                    ],
+                    "linux_auditd_logs": [
+                      {
+                        "type": "SYSCALL",
+                        "description": "System call for disabling or modifying system firewall"
+                      },
+                      {
+                        "type": "PATH",
+                        "description": "Path of the command modifying or disabling the system firewall"
+                      },
+                      {
+                        "type": "CWD",
+                        "description": "Current working directory of the process modifying or disabling the system firewall"
+                      },
+                      {
+                        "type": "PROCTITLE",
+                        "description": "Title of the process modifying or disabling the system firewall"
+                      },
+                      {
+                        "type": "EXECVE",
+                        "description": "Execution of the command modifying or disabling the system firewall"
+                      }
+                    ]
+                  },
+                  {
+                    "sub_technique_id": "T1562.005",
+                    "sub_technique_name": "Indicator Blocking",
+                    "windows_eventids": [],
+                    "linux_auditd_logs": []
+                  },
+                  {
+                    "sub_technique_id": "T1562.006",
+                    "sub_technique_name": "Disable or Modify Cloud Firewall",
+                    "windows_eventids": [],
+                    "linux_auditd_logs": []
+                  },
+                  {
+                    "sub_technique_id": "T1562.007",
+                    "sub_technique_name": "Disable Cloud Logs",
+                    "windows_eventids": [],
+                    "linux_auditd_logs": []
+                  },
+                  {
+                    "sub_technique_id": "T1562.008",
+                    "sub_technique_name": "Safe Mode Boot",
+                    "windows_eventids": [
+                      {
+                        "eventid": "12",
+                        "description": "Operating system started in Safe Mode"
+                      }
+                    ],
+                    "linux_auditd_logs": []
+                  },
+                  {
+                    "sub_technique_id": "T1562.009",
+                    "sub_technique_name": "Downgrade Attack",
+                    "windows_eventids": [],
+                    "linux_auditd_logs": []
+                  },
+                  {
+                    "sub_technique_id": "T1562.010",
+                    "sub_technique_name": "Spoof Security Alerting",
+                    "windows_eventids": [],
+                    "linux_auditd_logs": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "technique_id": "T1070",
+            "technique_name": "Indicator Removal",
+            "sub_techniques": [
+              {
+                "sub_technique_id": "T1070.001",
+                "sub_technique_name": "Clear Windows Event Logs",
+                "windows_eventids": [
+                  {
+                    "eventid": "1102",
+                    "description": "The audit log was cleared"
+                  }
+                ],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1070.002",
+                "sub_technique_name": "Clear Linux or Mac System Logs",
+                "windows_eventids": [],
+                "linux_auditd_logs": [
+                  {
+                    "type": "EXECVE",
+                    "description": "Execution of log clearing commands"
+                  }
+                ]
+              },
+              {
+                "sub_technique_id": "T1070.003",
+                "sub_technique_name": "Clear Command History",
+                "windows_eventids": [],
+                "linux_auditd_logs": [
+                  {
+                    "type": "EXECVE",
+                    "description": "Execution of command history clearing commands"
+                  }
+                ]
+              },
+              {
+                "sub_technique_id": "T1070.004",
+                "sub_technique_name": "File Deletion",
+                "windows_eventids": [
+                  {
+                    "eventid": "4663",
+                    "description": "An attempt was made to delete an object"
+                  }
+                ],
+                "linux_auditd_logs": [
+                  {
+                    "type": "PATH",
+                    "description": "File path of the deleted file"
+                  },
+                  {
+                    "type": "SYSCALL",
+                    "description": "File deletion system call"
+                  }
+                ]
+              },
+              {
+                "sub_technique_id": "T1070.005",
+                "sub_technique_name": "Network Share Connection Removal",
+                "windows_eventids": [
+                  {
+                    "eventid": "5140",
+                    "description": "A network share object was accessed"
+                  }
+                ],
+                "linux_auditd_logs": [
+                  {
+                    "type": "CWD",
+                    "description": "Current working directory"
+                  },
+                  {
+                    "type": "EXECVE",
+                    "description": "Execution of command to remove network share connection"
+                  }
+                ]
+              },
+              {
+                "sub_technique_id": "T1070.006",
+                "sub_technique_name": "Timestomp",
+                "windows_eventids": [
+                  {
+                    "eventid": "4663",
+                    "description": "An attempt was made to write to a file"
+                  }
+                ],
+                "linux_auditd_logs": [
+                  {
+                    "type": "SYSCALL",
+                    "description": "File system timestamp modification"
+                  }
+                ]
+              },
+              {
+                "sub_technique_id": "T1070.007",
+                "sub_technique_name": "Clear Network Connection History and Configurations",
+                "windows_eventids": [],
+                "linux_auditd_logs": [
+                  {
+                    "type": "EXECVE",
+                    "description": "Execution of command to clear network history and configurations"
+                  }
+                ]
+              },
+              {
+                "sub_technique_id": "T1070.008",
+                "sub_technique_name": "Clear Mailbox Data",
+                "windows_eventids": [],
+                "linux_auditd_logs": [
+                  {
+                    "type": "EXECVE",
+                    "description": "Execution of command to clear mailbox data"
+                  }
+                ]
+              },
+              {
+                "sub_technique_id": "T1070.009",
+                "sub_technique_name": "Clear Persistence",
+                "windows_eventids": [
+                  {
+                    "eventid": "13",
+                    "description": "Registry value created or modified"
+                  },
+                  {
+                    "eventid": "4657",
+                    "description": "A registry value was modified"
+                  },
+                  {
+                    "eventid": "4697",
+                    "description": "A service was installed in the system"
+                  }
+                ],
+                "linux_auditd_logs": [
+                  {
+                    "type": "EXECVE",
+                    "description": "Execution of command to clear persistence mechanisms"
+                  },
+                  {
+                    "type": "SYSCALL",
+                    "description": "System call for removing persistent objects"
+                  },
+                  {
+                    "type": "CRED_ACQ",
+                    "description": "Credential acquisition for persistence removal"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "technique_id": "T1202",
+            "technique_name": "Indirect Command Execution",
+            "windows_eventids": [
+              {
+                "eventid": "4688",
+                "description": "A new process has been created"
+              },
+              {
+                "eventid": "1",
+                "description": "Process creation"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "type": "EXECVE",
+                "description": "Execution of an indirect command"
+              }
+            ]
+          },
+          {
+            "technique_id": "T1036",
+            "technique_name": "Masquerading",
+            "sub_techniques": [
+              {
+                "sub_technique_id": "T1036.001",
+                "sub_technique_name": "Invalid Code Signature",
+                "windows_eventids": [
+                  {
+                    "eventid": "4103",
+                    "description": "A new process with an invalid code signature was created"
+                  }
+                ],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1036.002",
+                "sub_technique_name": "Right-to-Left Override",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1036.003",
+                "sub_technique_name": "Rename System Utilities",
+                "windows_eventids": [
+                  {
+                    "eventid": "11",
+                    "description": "Registry key created or modified"
+                  },
+                  {
+                    "eventid": "13",
+                    "description": "Registry value created or modified"
+                  }
+                ],
+                "linux_auditd_logs": [
+                  {
+                    "type": "PATH",
+                    "description": "Renamed system utilities"
+                  },
+                  {
+                    "type": "CWD",
+                    "description": "Working directory of the renamed system utilities"
+                  },
+                  {
+                    "type": "EXECVE",
+                    "description": "Execution of renamed system utilities"
+                  }
+                ]
+              },
+              {
+                "sub_technique_id": "T1036.004",
+                "sub_technique_name": "Masquerade Task or Service",
+                "windows_eventids": [
+                  {
+                    "eventid": "4697",
+                    "description": "A service was installed in the system"
+                  },
+                  {
+                    "eventid": "11",
+                    "description": "Registry key created or modified"
+                  },
+                  {
+                    "eventid": "13",
+                    "description": "Registry value created or modified"
+                  }
+                ],
+                "linux_auditd_logs": [
+                  {
+                    "type": "EXECVE",
+                    "description": "Execution of masqueraded task or service"
+                  },
+                  {
+                    "type": "SYSCALL",
+                    "description": "System call related to masqueraded task or service"
+                  }
+                ]
+              },
+              {
+                "sub_technique_id": "T1036.005",
+                "sub_technique_name": "Match Legitimate Name or Location",
+                "windows_eventids": [
+                  {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                  },
+                  {
+                    "eventid": "1",
+                    "description": "Process creation"
+                  }
+                ],
+                "linux_auditd_logs": [
+                  {
+                    "type": "EXECVE",
+                    "description": "Execution of a process matching a legitimate name or location"
+                  }
+                ]
+              },
+              {
+                "sub_technique_id": "T1036.006",
+                "sub_technique_name": "Space after Filename",
+                "windows_eventids": [
+                  {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                  },
+                  {
+                    "eventid": "1",
+                    "description": "Process creation"
+                  }
+                ],
+                "linux_auditd_logs": [
+                  {
+                    "type": "EXECVE",
+                    "description": "Execution of a process with space after filename"
+                  }
+                ]
+              },
+              {
+                "sub_technique_id": "T1036.007",
+                "sub_technique_name": "Double File Extension",
+                "windows_eventids": [
+                  {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                  },
+                  {
+                    "eventid": "1",
+                    "description": "Process creation"
+                  }
+                ],
+                "linux_auditd_logs": [
+                  {
+                    "type": "EXECVE",
+                    "description": "Execution of a process with a double file extension"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "technique_id": "T1556",
+            "technique_name": "Modify Authentication Process",
+            "sub_techniques": [
+              {
+                "sub_technique_id": "T1556.001",
+                "sub_technique_name": "Domain Controller Authentication",
+                "windows_eventids": [
+                  {
+                    "eventid": "4624",
+                    "description": "An account was successfully logged on"
+                  },
+                  {
+                    "eventid": "4776",
+                    "description": "The computer attempted to validate the credentials for an account"
+                  }
+                ],
+                "linux_auditd_logs": [
+                  {
+                    "log_type": "USER_LOGIN",
+                    "description": "Records user logins"
+                  },
+                  {
+                    "log_type": "USER_END",
+                    "description": "Records user logout"
+                  }
+                ]
+              },
+              {
+                "sub_technique_id": "T1556.002",
+                "sub_technique_name": "Password Filter DLL",
+                "windows_eventids": [
+                  {
+                    "eventid": "11",
+                    "description": "Registry key created or modified"
+                  }
+                ],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1556.003",
+                "sub_technique_name": "Pluggable Authentication Modules",
+                "windows_eventids": [],
+                "linux_auditd_logs": [
+                  {
+                    "log_type": "CONFIG_CHANGE",
+                    "description": "Records changes in system configuration"
+                  },
+                  {
+                    "log_type": "PATH",
+                    "description": "Records the file system path related to the event"
+                  }
+                ]
+              },
+              {
+                "sub_technique_id": "T1556.004",
+                "sub_technique_name": "Network Device Authentication",
+                "windows_eventids": [
+                  {
+                    "eventid": "4624",
+                    "description": "An account was successfully logged on"
+                  }
+                ],
+                "linux_auditd_logs": [
+                  {
+                    "log_type": "USER_LOGIN",
+                    "description": "Records user logins"
+                  },
+                  {
+                    "log_type": "USER_END",
+                    "description": "Records user logout"
+                  }
+                ]
+              },
+              {
+                "sub_technique_id": "T1556.005",
+                "sub_technique_name": "Reversible Encryption",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1556.006",
+                "sub_technique_name": "Multi-Factor Authentication",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1556.007",
+                "sub_technique_name": "Hybrid Identity",
+                "windows_eventids": [
+                  {
+                    "eventid": "4624",
+                    "description": "An account was successfully logged on"
+                  }
+                ],
+                "linux_auditd_logs": [
+                  {
+                    "log_type": "USER_LOGIN",
+                    "description": "Records user logins"
+                  },
+                  {
+                    "log_type": "USER_END",
+                    "description": "Records user logout"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "technique_id": "T1578",
+            "technique_name": "Modify Cloud Compute Infrastructure",
+            "sub_techniques": [
+              {
+                "sub_technique_id": "T1578.001",
+                "sub_technique_name": "Create Snapshot",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1578.002",
+                "sub_technique_name": "Create Cloud Instance",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1578.003",
+                "sub_technique_name": "Delete Cloud Instance",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1578.004",
+                "sub_technique_name": "Revert Cloud Instance",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              }
+            ]
+          },
+          {
+            "technique_id": "T1112",
+            "technique_name": "Modify Registry",
+            "sub_techniques": [
+              {
+                "sub_technique_id": "T1112",
+                "sub_technique_name": "Modify Registry",
+                "windows_eventids": [
+                  {
+                    "eventid": "13",
+                    "description": "Registry value created or modified"
+                  },
+                  {
+                    "eventid": "11",
+                    "description": "Registry key created or modified"
+                  }
+                ],
+                "linux_auditd_logs": [
+                  {
+                    "type": "SYSCALL",
+                    "description": "System call for registry modification, such as regedit, wine, etc."
+                  },
+                  {
+                    "type": "EXECVE",
+                    "description": "Execution of a process modifying the registry"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "technique_id": "T1604",
+            "technique_name": "Modify System Image",
+            "sub_techniques": [
+              {
+                "sub_technique_id": "T1604.001",
+                "sub_technique_name": "Patch System Image",
+                "windows_eventids": [
+                  {
+                    "eventid": "4697",
+                    "description": "A service was installed in the system"
+                  },
+                  {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                  }
+                ],
+                "linux_auditd_logs": [
+                  {
+                    "type": "SYSCALL",
+                    "description": "System call for modifying system image"
+                  },
+                  {
+                    "type": "EXECVE",
+                    "description": "Execution of a process modifying the system image"
+                  }
+                ]
+              },
+              {
+                "sub_technique_id": "T1604.002",
+                "sub_technique_name": "Downgrade System Image",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              }
+            ]
+          },
+          {
+            "technique_id": "T1599",
+            "technique_name": "Network Boundary Bridging",
+            "sub_techniques": [
+              {
+                "sub_technique_id": "T1599.001",
+                "sub_technique_name": "Network Address Translation Traversal",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              }
+            ]
+          },
+          {
+            "technique_id": "T1027",
+            "technique_name": "Obfuscated Files or Information",
+            "sub_techniques": [
+              {
+                "sub_technique_id": "T1027.001",
+                "sub_technique_name": "Binary Padding",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1027.002",
+                "sub_technique_name": "Software Packing",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1027.003",
+                "sub_technique_name": "Steganography",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1027.004",
+                "sub_technique_name": "Compile After Delivery",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1027.005",
+                "sub_technique_name": "Indicator Removal from Tools",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1027.006",
+                "sub_technique_name": "HTML Smuggling",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1027.007",
+                "sub_technique_name": "Dynamic API Resolution",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1027.008",
+                "sub_technique_name": "Stripped Payloads",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1027.009",
+                "sub_technique_name": "Embedded Payloads",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              }
+            ]
+          },
+          {
+            "technique_id": "T1542",
+            "technique_name": "Pre-OS Boot",
+            "sub_techniques": [
+              {
+                "sub_technique_id": "T1542.001",
+                "sub_technique_name": "System Firmware",
+                "windows_eventids": [],
+                "linux_auditd_logs": [
+                  {
+                    "log_rule": "audit=1",
+                    "description": "System boot"
+                  },
+                  {
+                    "log_rule": "type=EXECVE",
+                    "description": "Execution of a process"
+                  }
+                ]
+              },
+              {
+                "sub_technique_id": "T1542.002",
+                "sub_technique_name": "Component Firmware",
+                "windows_eventids": [],
+                "linux_auditd_logs": [
+                  {
+                    "log_rule": "audit=1",
+                    "description": "System boot"
+                  },
+                  {
+                    "log_rule": "type=EXECVE",
+                    "description": "Execution of a process"
+                  }
+                ]
+              },
+              {
+                "sub_technique_id": "T1542.003",
+                "sub_technique_name": "Bootkit",
+                "windows_eventids": [
+                  {
+                    "eventid": "13",
+                    "description": "Registry value created or modified"
+                  },
+                  {
+                    "eventid": "11",
+                    "description": "Registry key created or modified"
+                  }
+                ],
+                "linux_auditd_logs": [
+                  {
+                    "log_rule": "audit=1",
+                    "description": "System boot"
+                  },
+                  {
+                    "log_rule": "type=EXECVE",
+                    "description": "Execution of a process"
+                  }
+                ]
+              },
+              {
+                "sub_technique_id": "T1542.004",
+                "sub_technique_name": "ROMMONkit",
+                "windows_eventids": [],
+                "linux_auditd_logs": [
+                  {
+                    "log_rule": "audit=1",
+                    "description": "System boot"
+                  },
+                  {
+                    "log_rule": "type=EXECVE",
+                    "description": "Execution of a process"
+                  }
+                ]
+              },
+              {
+                "sub_technique_id": "T1542.005",
+                "sub_technique_name": "TFTP Boot",
+                "windows_eventids": [
+                  {
+                    "eventid": "5145",
+                    "description": "A network share object was checked to see whether the client can be granted desired access"
+                  }
+                ],
+                "linux_auditd_logs": [
+                  {
+                    "log_rule": "audit=1",
+                    "description": "System boot"
+                  },
+                  {
+                    "log_rule": "type=EXECVE",
+                    "description": "Execution of a process"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "technique_id": "T1055",
+            "technique_name": "Process Injection",
+            "sub_techniques": [
+              {
+                "sub_technique_id": "T1055.001",
+                "sub_technique_name": "Dynamic-link Library Injection",
+                "windows_eventids": [
+                  {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                  },
+                  {
+                    "eventid": "104",
+                    "description": "An attempt was made to reset an account's password"
+                  }
+                ],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1055.002",
+                "sub_technique_name": "Portable Executable Injection",
+                "windows_eventids": [
+                  {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                  }
+                ],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1055.003",
+                "sub_technique_name": "Thread Execution Hijacking",
+                "windows_eventids": [
+                  {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                  }
+                ],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1055.004",
+                "sub_technique_name": "Asynchronous Procedure Call",
+                "windows_eventids": [
+                  {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                  }
+                ],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1055.005",
+                "sub_technique_name": "Thread Local Storage",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1055.006",
+                "sub_technique_name": "Ptrace System Calls",
+                "windows_eventids": [],
+                "linux_auditd_logs": [
+                  {
+                    "log": "SYSCALL",
+                    "description": "Audit the ptrace system call"
+                  }
+                ]
+              },
+              {
+                "sub_technique_id": "T1055.007",
+                "sub_technique_name": "Proc Memory",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1055.008",
+                "sub_technique_name": "Extra Window Memory Injection",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1055.009",
+                "sub_technique_name": "Process Hollowing",
+                "windows_eventids": [
+                  {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                  }
+                ],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1055.010",
+                "sub_technique_name": "Process Doppelgänging",
+                "windows_eventids": [
+                  {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                  }
+                ],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1055.011",
+                "sub_technique_name": "VDSO Hijacking",
+                "windows_eventids": [],
+                "linux_auditd_logs": [
+                  {
+                    "log": "SYSCALL",
+                    "description": "Audit the mmap and mprotect system calls"
+                  }
+                ]
+              },
+              {
+                "sub_technique_id": "T1055.012",
+                "sub_technique_name": "ListPlanting",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              }
+            ]
+          },
+          {
+            "technique_id": "T1620",
+            "technique_name": "Reflective Code Loading",
+            "windows_eventids": [
+              {
+                "eventid": "7",
+                "description": "A new process was loaded with reflective DLL injection"
+              }
+            ],
+            "linux_auditd_logs": []
+          },
+          {
+            "technique_id": "T1207",
+            "technique_name": "Rogue Domain Controller",
+            "windows_eventids": [
+              {
+                "eventid": "4742",
+                "description": "A computer account was changed, potentially indicating a rogue domain controller"
+              }
+            ],
+            "linux_auditd_logs": []
+          },
+          {
+            "technique_id": "T1014",
+            "technique_name": "Rootkit",
+            "windows_eventids": [],
+            "linux_auditd_logs": [
+                  {
+                    "type": "SYSCALL",
+                    "description": "System call for loading a kernel module"
+                  },
+                  {
+                    "type": "PATH",
+                    "description": "Path of the kernel module being loaded"
+                  },
+                  {
+                    "type": "CWD",
+                    "description": "Current working directory of the process loading the kernel module"
+                  },
+                  {
+                    "type": "PROCTITLE",
+                    "description": "Title of the process loading the kernel module"
+                  },
+                  {
+                    "type": "EXECVE",
+                    "description": "Execution of the command loading the kernel module"
+                  }
+                ]
+          },
+          {
+            "technique_id": "T1553",
+            "technique_name": "Subvert Trust Controls",
+            "sub_techniques": [
+              {
+                "sub_technique_id": "T1553.001",
+                "sub_technique_name": "Gatekeeper Bypass",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1553.002",
+                "sub_technique_name": "Code Signing",
+                "windows_eventids": [
+                  {
+                    "eventid": "5038",
+                    "description": "Code integrity determined that the image hash of a file is not valid"
+                  }
+                ],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1553.003",
+                "sub_technique_name": "SIP and Trust Provider Hijacking",
+                "windows_eventids": [
+                  {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                  }
+                ],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1553.004",
+                "sub_technique_name": "Install Root Certificate",
+                "windows_eventids": [
+                  {
+                    "eventid": "5136",
+                    "description": "A directory service object was modified, potentially indicating a root certificate installation"
+                  }
+                ],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1553.005",
+                "sub_technique_name": "Mark-of-the-Web Bypass",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1553.006",
+                "sub_technique_name": "Code Signing Policy Modification",
+                "windows_eventids": [
+                  {
+                    "eventid": "4719",
+                    "description": "System audit policy was changed"
+                  }
+                ],
+                "linux_auditd_logs": []
+              }
+            ]
+          },
+          {
+            "technique_id": "T1218",
+            "technique_name": "System Binary Proxy Execution",
+            "sub_techniques": [
+              {
+                "sub_technique_id": "T1218.001",
+                "sub_technique_name": "Compiled HTML File",
+                "windows_eventids": [
+                  {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                  }
+                ],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1218.002",
+                "sub_technique_name": "Control Panel",
+                "windows_eventids": [
+                  {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                  }
+                ],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1218.003",
+                "sub_technique_name": "CMSTP",
+                "windows_eventids": [
+                  {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                  }
+                ],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1218.004",
+                "sub_technique_name": "InstallUtil",
+                "windows_eventids": [
+                  {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                  }
+                ],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1218.005",
+                "sub_technique_name": "Mshta",
+                "windows_eventids": [
+                  {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                  }
+                ],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1218.006",
+                "sub_technique_name": "Msiexec",
+                "windows_eventids": [
+                  {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                  }
+                ],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1218.007",
+                "sub_technique_name": "Odbcconf",
+                "windows_eventids": [
+                  {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                  }
+                ],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1218.008",
+                "sub_technique_name": "Regsvcs/Regasm",
+                "windows_eventids": [
+                  {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                  }
+                ],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1218.009",
+                "sub_technique_name": "Regsvr32",
+                "windows_eventids": [
+                  {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                  }
+                ],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1218.010",
+                "sub_technique_name": "Rundll32",
+                "windows_eventids": [
+                  {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                  }
+                ],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1218.011",
+                "sub_technique_name": "Verclsid",
+                "windows_eventids": [
+                  {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                  }
+                ],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1218.012",
+                "sub_technique_name": "Mavinject",
+                "windows_eventids": [
+                  {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                  }
+                ],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1218.013",
+                "sub_technique_name": "MMC",
+                "windows_eventids": [
+                  {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                  }
+                ],
+                "linux_auditd_logs": []
+              }
+            ]
+          },
+          {
+            "technique_id": "T1216",
+            "technique_name": "System Script Proxy Execution",
+            "sub_techniques": [
+              {
+                "sub_technique_id": "T1216.001",
+                "sub_technique_name": "PubPrn",
+                "windows_eventids": [
+                  {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                  }
+                ],
+                "linux_auditd_logs": []
+              }
+            ]
+          },
+          {
+            "technique_id": "T1221",
+            "technique_name": "Template Injection",
+            "sub_techniques": [],
+            "windows_eventids": [],
+            "linux_auditd_logs": []
+          },
+          {
+            "technique_id": "T1205",
+            "technique_name": "Traffic Signaling",
+            "sub_techniques": [
+              {
+                "sub_technique_id": "T1205.001",
+                "sub_technique_name": "Port Knocking",
+                "windows_eventids": [],
+                "linux_auditd_logs": [
+                  {
+                    "type": "SOCKADDR",
+                    "description": "Network socket address information for traffic signaling events"
+                  },
+                  {
+                    "type": "SYSCALL",
+                    "description": "System call for establishing network connections"
+                  }
+                ]
+              },
+              {
+                "sub_technique_id": "T1205.002",
+                "sub_technique_name": "Socket Filters",
+                "windows_eventids": [],
+                "linux_auditd_logs": [
+                  {
+                    "type": "SOCKADDR",
+                    "description": "Network socket address information for traffic signaling events"
+                  },
+                  {
+                    "type": "SYSCALL",
+                    "description": "System call for establishing network connections"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "technique_id": "T1127",
+            "technique_name": "Trusted Developer Utilities Proxy Execution",
+            "sub_techniques": [
+              {
+                "sub_technique_id": "T1127.001",
+                "sub_technique_name": "MSBuild",
+                "windows_eventids": [
+                  {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                  }
+                ],
+                "linux_auditd_logs": []
+              }
+            ]
+          },
+          {
+            "technique_id": "T1596",
+            "technique_name": "Unused/Unsupported Cloud Regions",
+            "sub_techniques": [],
+            "windows_eventids": [],
+            "linux_auditd_logs": []
+          },
+          {
+            "technique_id": "T1497",
+            "technique_name": "Virtualization/Sandbox Evasion",
+            "sub_techniques": [
+              {
+                "sub_technique_id": "T1497.001",
+                "sub_technique_name": "System Checks",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1497.002",
+                "sub_technique_name": "User Activity Based Checks",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1497.003",
+                "sub_technique_name": "Time Based Evasion",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              }
+            ]
+          },
+          {
+            "technique_id": "T1600",
+            "technique_name": "Weaken Encryption",
+            "sub_techniques": [
+              {
+                "sub_technique_id": "T1600.001",
+                "sub_technique_name": "Reduce Key Space",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              },
+              {
+                "sub_technique_id": "T1600.002",
+                "sub_technique_name": "Disable Crypto Hardware",
+                "windows_eventids": [],
+                "linux_auditd_logs": []
+              }
+            ]
+          },
+          {
+            "technique_id": "T1220",
+            "technique_name": "XSL Script Processing",
+            "sub_techniques": [],
+            "windows_eventids": [
+              {
+                "eventid": "4688",
+                "description": "A new process has been created"
+              }
+            ],
+            "linux_auditd_logs": []
+          }
+
+    ]
+  }

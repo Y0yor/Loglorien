@@ -1,0 +1,833 @@
+{
+  "tactic": "Execution",
+  "techniques": [
+      {
+          "technique_id": "T1204",
+          "technique_name": "User Execution",
+          "windows_eventids": [
+              {
+                  "eventid": "4688",
+                  "description": "A new process has been created"
+              },
+              {
+                  "eventid": "4697",
+                  "description": "A service was installed in the system"
+              },
+              {
+                  "eventid": "1102",
+                  "description": "The audit log was cleared"
+              }
+          ],
+          "linux_auditd_logs": [
+              {
+                  "type": "EXECVE",
+                  "description": "Program execution"
+              },
+              {
+                  "type": "execveat",
+                  "description": "Program execution with file descriptor"
+              },
+              {
+                  "type": "CRED_DISP",
+                  "description": "Displaying user credentials"
+              },
+              {
+                  "type": "USER_START",
+                  "description": "User session start"
+              },
+              {
+                  "type": "USER_END",
+                  "description": "User session end"
+              }
+          ],
+          "sub_techniques": [
+              {
+                  "sub_technique_id": "T1204.001",
+                  "sub_technique_name": "User Execution - Malicious Link",
+                  "windows_eventids": [
+                      {
+                          "eventid": "4624",
+                          "description": "An account was successfully logged on"
+                      },
+                      {
+                          "eventid": "4688",
+                          "description": "A new process has been created"
+                      },
+                      {
+                          "eventid": "1102",
+                          "description": "The audit log was cleared"
+                      }
+                  ],
+                  "linux_auditd_logs": [
+                      {
+                          "type": "EXECVE",
+                          "description": "Program execution"
+                      },
+                      {
+                          "type": "execveat",
+                          "description": "Program execution with file descriptor"
+                      },
+                      {
+                          "type": "CRED_DISP",
+                          "description": "Displaying user credentials"
+                      },
+                      {
+                          "type": "USER_START",
+                          "description": "User session start"
+                      },
+                      {
+                          "type": "USER_END",
+                          "description": "User session end"
+                      }
+                  ]
+              },
+              {
+                  "sub_technique_id": "T1204.002",
+                  "sub_technique_name": "User Execution - Malicious File",
+                  "windows_eventids": [
+                      {
+                          "eventid": "4688",
+                          "description": "A new process has been created"
+                      },
+                      {
+                          "eventid": "4697",
+                          "description": "A service was installed in the system"
+                      },
+                      {
+                          "eventid": "1102",
+                          "description": "The audit log was cleared"
+                      }
+                  ],
+                  "linux_auditd_logs": [
+                      {
+                          "type": "EXECVE",
+                          "description": "Program execution"
+                      },
+                      {
+                          "type": "execveat",
+                          "description": "Program execution with file descriptor"
+                      },
+                      {
+                          "type": "CRED_DISP",
+                          "description": "Displaying user credentials"
+                      },
+                      {
+                          "type": "USER_START",
+                          "description": "User session start"
+                      },
+                      {
+                          "type": "USER_END",
+                          "description": "User session end"
+                      }
+                  ]
+              },
+              {
+                  "sub_technique_id": "T1204.003",
+                  "sub_technique_name": "User Execution - Malicious Image",
+                  "windows_eventids": [
+                      {
+                          "eventid": "4688",
+                          "description": "A new process has been created"
+                      },
+                      {
+                          "eventid": "4697",
+                          "description": "A service was installed in the system"
+                      },
+                      {
+                          "eventid": "1102",
+                          "description": "The audit log was cleared"
+                      }
+                  ],
+                  "linux_auditd_logs": [
+                      {
+                          "type": "EXECVE",
+                          "description": "Program execution"
+                      },
+                      {
+                          "type": "execveat",
+                          "description": "Program execution with file descriptor"
+                      },
+                      {
+                          "type": "CRED_DISP",
+                          "description": "Displaying user credentials"
+                      },
+                      {
+                          "type": "USER_START",
+                          "description": "User session start"
+                      },
+                      {
+                          "type": "USER_END",
+                          "description": "User session end"
+                      }
+                  ]
+              }
+          ]
+      },
+      {
+          "technique_id": "T1059",
+          "technique_name": "Command and Scripting Interpreter",
+          "windows_eventids": [],
+          "linux_auditd_logs": [],
+          "sub_techniques": [
+              {
+                  "sub_technique_id": "T1059.001",
+                  "sub_technique_name": "PowerShell",
+                  "windows_eventids": [
+                      {
+                          "eventid": "4688",
+                          "description": "A new process has been created"
+                      },
+                      {
+                          "eventid": "4697",
+                          "description": "A service was installed in the system"
+                      },
+                      {
+                          "eventid": "4103",
+                          "description": "A new PowerShell script block was executed"
+                      },
+                      {
+                          "eventid": "4104",
+                          "description": "PowerShell script block logging"
+                      },
+                      {
+                        "eventid": "800",
+                        "description": "A new PowerShell Runspace was started"
+                      }
+                  ],
+                  "linux_auditd_logs": []
+              },
+              {
+                  "sub_technique_id": "T1059.002",
+                  "sub_technique_name": "AppleScript",
+                  "windows_eventids": [],
+                  "linux_auditd_logs": [
+                      {
+                          "type": "EXECVE",
+                          "description": "Executing new process"
+                      },
+                      {
+                          "type": "execveat",
+                          "description": "Executing new process with a file descriptor"
+                      },
+                      {
+                          "type": "CRED_DISP",
+                          "description": "Displaying user credentials"
+                      },
+                      {
+                          "type": "USER_START",
+                          "description": "User session start"
+                      },
+                      {
+                          "type": "USER_END",
+                          "description": "User session end"
+                      }
+                  ]
+              },
+              {
+                  "sub_technique_id": "T1059.003",
+                  "sub_technique_name": "Windows Command Shell",
+                  "windows_eventids": [
+                      {
+                          "eventid": "4688",
+                          "description": "A new process has been created"
+                      },
+                      {
+                          "eventid": "4697",
+                          "description": "A service was installed in the system"
+                      }
+                  ],
+                  "linux_auditd_logs": []
+              },
+              {
+                  "sub_technique_id": "T1059.004",
+                  "sub_technique_name": "Unix Shell",
+                  "windows_eventids": [],
+                  "linux_auditd_logs": [
+                      {
+                          "type": "EXECVE",
+                          "description": "Executing new process"
+                      },
+                      {
+                          "type": "execveat",
+                          "description": "Executing new process with a file descriptor"
+                      },
+                      {
+                          "type": "CRED_DISP",
+                          "description": "Displaying user credentials"
+                      },
+                      {
+                          "type": "USER_START",
+                          "description": "User session start"
+                      },
+                      {
+                          "type": "USER_END",
+                          "description": "User session end"
+                      }
+                  ]
+              },
+              {
+                  "sub_technique_id": "T1059.005",
+                  "sub_technique_name": "Visual Basic",
+                  "windows_eventids": [
+                      {
+                          "eventid": "4688",
+                          "description": "A new process has been created"
+                      },
+                      {
+                          "eventid": "4697",
+                          "description": "A service was installed in the system"
+                      }
+                  ],
+                  "linux_auditd_logs": []
+              },
+              {
+                  "sub_technique_id": "T1059.006",
+                  "sub_technique_name": "Python",
+                  "windows_eventids": [
+                      {
+                          "eventid": "4688",
+                          "description": "A new process has been created"
+                      },
+                      {
+                          "eventid": "4697",
+                          "description": "A service was installed in the system"
+                      }
+                  ],
+                  "linux_auditd_logs": [
+                      {
+                          "type": "EXECVE",
+                          "description": "Executing new process"
+                      },
+                      {
+                          "type": "execveat",
+                          "description": "Executing new process with a file descriptor"
+                      },
+                      {
+                          "type": "CRED_DISP",
+                          "description": "Displaying user credentials"
+                      },
+                      {
+                          "type": "USER_START",
+                          "description": "User session start"
+                      },
+                      {
+                          "type": "USER_END",
+                          "description": "User session end"
+                      }
+                  ]
+              },
+              {
+                  "sub_technique_id": "T1059.007",
+                  "sub_technique_name": "JavaScript",
+                  "windows_eventids": [
+                      {
+                          "eventid": "4688",
+                          "description": "A new process has been created"
+                      },
+                      {
+                          "eventid": "4697",
+                          "description": "A service was installed in the system"
+                      }
+                  ],
+                  "linux_auditd_logs": []
+              },
+              {
+                  "sub_technique_id": "T1059.008",
+                  "sub_technique_name": "Network Device CLI",
+                  "windows_eventids": [],
+                  "linux_auditd_logs": [
+                      {
+                          "type": "EXECVE",
+                          "description": "Executing new process"
+                      },
+                      {
+                          "type": "execveat",
+                          "description": "Executing new process with a file descriptor"
+                      },
+                      {
+                          "type": "CRED_DISP",
+                          "description": "Displaying user credentials"
+                      },
+                      {
+                          "type": "USER_START",
+                          "description": "User session start"
+                      },
+                      {
+                          "type": "USER_END",
+                          "description": "User session end"
+                      }
+                  ]
+              }
+          ]
+      },
+      {
+          "technique_id": "T1569",
+          "technique_name": "System Services",
+          "sub_techniques": [
+              {
+                  "sub_technique_id": "T1569.001",
+                  "sub_technique_name": "Launchctl",
+                  "windows_eventids": [],
+                  "linux_auditd_logs": [
+                      "LAUNCHD"
+                  ]
+              },
+              {
+                  "sub_technique_id": "T1569.002",
+                  "sub_technique_name": "Service Execution",
+                  "windows_eventids": [
+                      {
+                          "eventid": "7034",
+                          "description": "Service Control Manager - Service terminated unexpectedly"
+                      },
+                      {
+                          "eventid": "7035",
+                          "description": "Service Control Manager - Service sent a start or stop control"
+                      },
+                      {
+                          "eventid": "7036",
+                          "description": "Service Control Manager - Service entered the stopped state"
+                      }
+                  ],
+                  "linux_auditd_logs": [
+                      "SERVICE_START",
+                      "SERVICE_STOP"
+                  ]
+              }
+          ]
+      },
+      {
+          "technique_id": "T1053",
+          "technique_name": "Scheduled Task/Job",
+          "windows_eventids": [
+              {
+                  "eventid": "4698",
+                  "description": "A scheduled task was created"
+              },
+              {
+                  "eventid": "4699",
+                  "description": "A scheduled task was deleted"
+              },
+              {
+                  "eventid": "4700",
+                  "description": "A scheduled task was enabled"
+              },
+              {
+                  "eventid": "4701",
+                  "description": "A scheduled task was disabled"
+              },
+              {
+                  "eventid": "4702",
+                  "description": "A scheduled task was updated"
+              }
+          ],
+          "linux_auditd_logs": [
+              {
+                  "type": "CRED_DISP",
+                  "description": "Displaying user credentials"
+              },
+              {
+                  "type": "USER_START",
+                  "description": "User session start"
+              },
+              {
+                  "type": "USER_END",
+                  "description": "User session end"
+              }
+          ],
+          "sub_techniques": [
+              {
+                  "sub_technique_id": "T1053.002",
+                  "sub_technique_name": "At",
+                  "windows_eventids": [
+                      {
+                          "eventid": "4698",
+                          "description": "A scheduled task was created"
+                      },
+                      {
+                          "eventid": "4699",
+                          "description": "A scheduled task was deleted"
+                      },
+                      {
+                          "eventid": "4700",
+                          "description": "A scheduled task was enabled"
+                      },
+                      {
+                          "eventid": "4701",
+                          "description": "A scheduled task was disabled"
+                      },
+                      {
+                          "eventid": "4702",
+                          "description": "A scheduled task was updated"
+                      }
+                  ],
+                  "linux_auditd_logs": [
+                      {
+                          "type": "CRED_DISP",
+                          "description": "Displaying user credentials"
+                      },
+                      {
+                          "type": "USER_START",
+                          "description": "User session start"
+                      },
+                      {
+                          "type": "USER_END",
+                          "description": "User session end"
+                      }
+                  ]
+              },
+              {
+                  "sub_technique_id": "T1053.003",
+                  "sub_technique_name": "Cron",
+                  "windows_eventids": [],
+                  "linux_auditd_logs": [
+                        {
+                            "type": "CRON",
+                            "description": "Cron job execution"
+                        },
+                        {
+                            "type": "CRON_JOB",
+                            "description": "Cron job creation or modification"
+                        }
+                    ]
+                },
+                {
+                    "sub_technique_id": "T1053.005",
+                    "sub_technique_name": "Scheduled Task",
+                    "windows_eventids": [
+                        {
+                            "eventid": "4688",
+                            "description": "A new process has been created"
+                        },
+                        {
+                            "eventid": "5145",
+                            "description": "Remote schedule task creation via named pipes"
+                        },
+                        {
+                            "eventid": "4698",
+                            "description": "A scheduled task was created"
+                        },
+                        {
+                            "eventid": "4699",
+                            "description": "A scheduled task was deleted"
+                        },
+                        {
+                            "eventid": "4700",
+                            "description": "A scheduled task was enabled"
+                        },
+                        {
+                            "eventid": "4701",
+                            "description": "A scheduled task was disabled"
+                        },
+                        {
+                            "eventid": "4702",
+                            "description": "A scheduled task was updated"
+                        }
+                  ],
+                  "linux_auditd_logs": []
+              },
+              {
+                  "sub_technique_id": "T1053.006",
+                  "sub_technique_name": "Systemd Timers",
+                  "windows_eventids": [],
+                  "linux_auditd_logs": [
+                      {
+                          "type": "UNIT",
+                          "description": "Systemd unit start or stop event"
+                      },
+                      {
+                          "type": "UNIT_RESULT",
+                          "description": "Systemd unit result after execution"
+                      }
+                  ]
+              },
+              {
+                  "sub_technique_id": "T1053.007",
+                  "sub_technique_name": "Container Orchestration Job",
+                  "windows_eventids": [],
+                  "linux_auditd_logs": [
+                      {
+                          "type": "KUBE_AUDIT",
+                          "description": "Kubernetes audit log events"
+                      }
+                  ]
+              }
+          ]
+      },
+      {
+          "tactic": "Execution",
+          "techniques": [
+              {
+                  "technique_id": "T1559",
+                  "technique_name": "Inter-Process Communication",
+                  "windows_eventids": [],
+                  "linux_auditd_logs": [],
+                  "sub_techniques": [
+                      {
+                          "sub_technique_id": "T1559.001",
+                          "sub_technique_name": "Component Object Model",
+                          "windows_eventids": [],
+                          "linux_auditd_logs": []
+                      },
+                      {
+                          "sub_technique_id": "T1559.002",
+                          "sub_technique_name": "Dynamic Data Exchange",
+                          "windows_eventids": [],
+                          "linux_auditd_logs": []
+                      },
+                      {
+                          "sub_technique_id": "T1559.003",
+                          "sub_technique_name": "XPC Services",
+                          "windows_eventids": [],
+                          "linux_auditd_logs": []
+                      }
+                  ]
+              }
+          ]
+      },
+      {
+          "technique_id": "T1203",
+          "technique_name": "Exploitation for Client Execution",
+          "windows_eventids": [
+              {
+                  "eventid": "4688",
+                  "description": "A new process has been created"
+              },
+              {
+                  "eventid": "4697",
+                  "description": "A service was installed in the system"
+              }
+          ],
+          "linux_auditd_logs": [
+              {
+                  "type": "EXECVE",
+                  "description": "Executed a new process"
+              },
+              {
+                  "type": "CRED_DISP",
+                  "description": "Displaying user credentials"
+              }
+          ],
+          "sub_techniques": []
+      },
+      {
+          "technique_id": "T1047",
+          "technique_name": "Windows Management Instrumentation",
+          "windows_eventids": [
+              {
+                  "eventid": "4688",
+                  "description": "A new process has been created"
+              },
+              {
+                  "eventid": "4697",
+                  "description": "A service was installed in the system"
+              },
+              {
+                  "eventid": "5857",
+                  "description": "WMI activity event"
+              },
+              {
+                  "eventid": "5858",
+                  "description": "WMI activity operational"
+              },
+              {
+                  "eventid": "5859",
+                  "description": "WMI activity trace"
+              }
+          ],
+          "linux_auditd_logs": []
+      },
+      {
+          "technique_id": "T1106",
+          "technique_name": "Native API",
+          "windows_eventids": [
+              {
+                  "eventid": "4688",
+                  "description": "A new process has been created"
+              },
+              {
+                  "eventid": "4697",
+                  "description": "A service was installed in the system"
+              },
+              {
+                  "eventid": "1102",
+                  "description": "The audit log was cleared"
+              },
+              {
+                  "eventid": "4663",
+                  "description": "An attempt was made to access an object"
+              }
+          ],
+          "linux_auditd_logs": [
+              {
+                  "type": "SYSCALL",
+                  "description": "System call invoked"
+              },
+              {
+                  "type": "EXECVE",
+                  "description": "Execution of a new process via execve system call"
+              },
+              {
+                  "type": "execveat",
+                  "description": "Execution of a new process via execveat system call"
+              },
+              {
+                  "type": "CRED_DISP",
+                  "description": "Displaying user credentials"
+              },
+              {
+                  "type": "USER_START",
+                  "description": "User session started"
+              },
+              {
+                  "type": "USER_END",
+                  "description": "User session ended"
+              }
+          ]
+      },
+      {
+          "technique_id": "T1648",
+          "technique_name": "Serverless Execution",
+          "windows_eventids": [
+              {
+                  "eventid": "4688",
+                  "description": "A new process has been created"
+              }
+          ],
+          "linux_auditd_logs": [
+              {
+                  "type": "EXECVE",
+                  "description": "Execution of a new process via execve system call"
+              },
+              {
+                  "type": "execveat",
+                  "description": "Execution of a new process via execveat system call"
+              }
+          ]
+      },
+      {
+          "technique_id": "T1129",
+          "technique_name": "Shared Modules",
+          "windows_eventids": [
+              {
+                  "eventid": "4688",
+                  "description": "A new process has been created"
+              },
+              {
+                  "eventid": "4697",
+                  "description": "A service was installed in the system"
+              },
+              {
+                  "eventid": "1102",
+                  "description": "The audit log was cleared"
+              }
+          ],
+          "linux_auditd_logs": [
+              {
+                  "type": "SYSCALL",
+                  "description": "System call invoked"
+              },
+              {
+                  "type": "EXECVE",
+                  "description": "Execution of a new process via execve system call"
+              },
+              {
+                  "type": "execveat",
+                  "description": "Execution of a new process via execveat system call"
+              }
+          ]
+      },
+      {
+          "technique_id": "T1072",
+          "technique_name": "Software Deployment Tools",
+          "windows_eventids": [
+              {
+                  "eventid": "4688",
+                  "description": "A new process has been created"
+              },
+              {
+                  "eventid": "4697",
+                  "description": "A service was installed in the system"
+              },
+              {
+                  "eventid": "1102",
+                  "description": "The audit log was cleared"
+              }
+          ],
+          "linux_auditd_logs": [
+              {
+                  "type": "EXECVE",
+                  "description": "Execution of a new process via execve system call"
+              },
+              {
+                  "type": "execveat",
+                  "description": "Execution of a new process via execveat system call"
+              },
+              {
+                  "type": "CRED_DISP",
+                  "description": "Displaying user credentials"
+              },
+              {
+                  "type": "USER_START",
+                  "description": "User session started"
+              },
+              {
+                  "type": "USER_END",
+                  "description": "User session ended"
+              }
+          ]
+      },
+      {
+          "technique_id": "T1609",
+          "technique_name": "Container Administration Command",
+          "windows_eventids": [
+              {
+                  "eventid": "4688",
+                  "description": "A new process has been created"
+              }
+          ],
+          "linux_auditd_logs": [
+              {
+                  "type": "EXECVE",
+                  "description": "Execution of a new process via execve system call"
+              },
+              {
+                  "type": "execveat",
+                  "description": "Execution of a new process via execveat system call"
+              },
+              {
+                  "type": "DOCKER",
+                  "description": "Docker-related actions"
+              }
+          ]
+      },
+      {
+          "technique_id": "T1610",
+          "technique_name": "Deploy Container",
+          "windows_eventids": [
+              {
+                  "eventid": "4688",
+                  "description": "A new process has been created"
+              }
+          ],
+          "linux_auditd_logs": [
+              {
+                  "type": "EXECVE",
+                  "description": "Execution of a new process via execve system call"
+              },
+              {
+                  "type": "execveat",
+                  "description": "Execution of a new process via execveat system call"
+              },
+              {
+                  "type": "DOCKER",
+                  "description": "Docker-related actions"
+              },
+              {
+                  "type": "KUBE_AUDIT",
+                  "description": "Kubernetes audit logs"
+              }
+          ]
+      }
+  ]
+}

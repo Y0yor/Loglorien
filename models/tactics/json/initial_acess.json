@@ -1,0 +1,494 @@
+{
+    "tactic": "Initial Access",
+    "techniques": [
+        {
+            "technique_id": "T1189",
+            "technique_name": "Drive-by Compromise",
+            "windows_eventids": [
+                {
+                    "eventid": "4624",
+                    "description": "An account was successfully logged on"
+                },
+                {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                }
+            ],
+            "linux_auditd_logs": [
+                {
+                    "type": "USER_START",
+                    "description": "A user session started"
+                },
+                {
+                    "type": "EXECVE",
+                    "description": "A new process was executed"
+                }
+            ]
+        },
+        {
+            "technique_id": "T1190",
+            "technique_name": "Exploit Public-Facing Application",
+            "windows_eventids": [
+                {
+                    "eventid": "4624",
+                    "description": "An account was successfully logged on"
+                },
+                {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                }
+            ],
+            "linux_auditd_logs": [
+                {
+                    "type": "USER_START",
+                    "description": "A user session started"
+                },
+                {
+                    "type": "EXECVE",
+                    "description": "A new process was executed"
+                }
+            ]
+        },
+        {
+            "technique_id": "T1133",
+            "technique_name": "External Remote Services",
+            "windows_eventids": [
+                {
+                    "eventid": "4624",
+                    "description": "An account was successfully logged on"
+                },
+                {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                }
+            ],
+            "linux_auditd_logs": [
+                {
+                    "type": "USER_START",
+                    "description": "A user session started"
+                },
+                {
+                    "type": "EXECVE",
+                    "description": "A new process was executed"
+                }
+            ]
+        },
+        {
+            "technique_id": "T1200",
+            "technique_name": "Hardware Additions",
+            "windows_eventids": [
+                {
+                    "eventid": "6416",
+                    "description": "A new device was installed"
+                }
+            ],
+            "linux_auditd_logs": [
+                {
+                    "type": "USB",
+                    "description": "USB device connected or disconnected"
+                }
+            ]
+        },
+        {
+            "technique_id": "T1566",
+            "technique_name": "Phishing",
+            "sub_techniques": [
+                {
+                    "sub_technique_id": "T1566.001",
+                    "sub_technique_name": "Spearphishing Attachment",
+                    "windows_eventids": [
+                        {
+                            "eventid": "4624",
+                            "description": "An account was successfully logged on"
+                        },
+                        {
+                            "eventid": "4688",
+                            "description": "A new process has been created"
+                        }
+                    ],
+                    "linux_auditd_logs": [
+                        {
+                            "type": "USER_START",
+                            "description": "A user session started"
+                        },
+                        {
+                            "type": "EXECVE",
+                            "description": "A new process was executed"
+                        }
+                    ]
+                },
+                {
+                    "sub_technique_id": "T1566.002",
+                    "sub_technique_name": "Spearphishing Link",
+                    "windows_eventids": [
+                        {
+                            "eventid": "4624",
+                            "description": "An account was successfully logged on"
+                        },
+                        {
+                            "eventid": "4688",
+                            "description": "A new process has been created"
+                        }
+                    ],
+                    "linux_auditd_logs": [
+                        {
+                            "type": "USER_START",
+                            "description": "A user session started"
+                        },
+                        {
+                            "type": "EXECVE",
+                            "description": "A new process was executed"
+                        }
+                    ]
+                },
+                {
+                    "sub_technique_id": "T1566.003",
+                    "sub_technique_name": "Spearphishing via Service",
+                    "windows_eventids": [
+                        {
+                            "eventid": "4624",
+                            "description": "An account was successfully logged on"
+                        },
+                        {
+                            "eventid": "4688",
+                            "description": "A new process has been created"
+                        }
+                    ],
+                    "linux_auditd_logs": [
+                        {
+                            "type": "USER_START",
+                            "description": "A user session started"
+                        },
+                        {
+                            "type": "EXECVE",
+                            "description": "A new process was executed"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "technique_id": "T1091",
+            "technique_name": "Replication Through Removable Media",
+            "windows_eventids": [
+                {
+                    "eventid": "6416",
+                    "description": "A new device was installed"
+                },
+                {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                }
+            ],
+            "linux_auditd_logs": [
+                {
+                    "type": "USB",
+                    "description": "USB device connected or disconnected"
+                },
+                {
+                    "type": "EXECVE",
+                    "description": "A new process was executed"
+                }
+            ]
+        },
+        {
+            "technique_id": "T1195",
+            "technique_name": "Supply Chain Compromise",
+            "sub_techniques": [
+                {
+                    "sub_technique_id": "T1195.001",
+                    "sub_technique_name": "Compromise Software Dependencies and Development Tools",
+                    "windows_eventids": [
+                        {
+                            "eventid": "4688",
+                            "description": "A new process has been created"
+                        },
+                        {
+                            "eventid": "4697",
+                            "description": "A service was installed in the system"
+                        }
+                    ],
+                    "linux_auditd_logs": [
+                        {
+                            "type": "EXECVE",
+                            "description": "A new process was executed"
+                        },
+                        {
+                            "type": "CRED_DISP",
+                            "description": "Displaying user credentials"
+                        }
+                    ]
+                },
+                {
+                    "sub_technique_id": "T1195.002",
+                    "sub_technique_name": "Compromise Software Supply Chain",
+                    "windows_eventids": [
+                        {
+                            "eventid": "4688",
+                            "description": "A new process has been created"
+                        },
+                        {
+                            "eventid": "4697",
+                            "description": "A service was installed in the system"
+                        }
+                    ],
+                    "linux_auditd_logs": [
+                        {
+                            "type": "EXECVE",
+                            "description": "A new process was executed"
+                        },
+                        {
+                            "type": "CRED_DISP",
+                            "description": "Displaying user credentials"
+                        }
+                    ]
+                },
+                {
+                    "sub_technique_id": "T1195.003",
+                    "sub_technique_name": "Compromise Hardware Supply Chain",
+                    "windows_eventids": [
+                        {
+                            "eventid": "6416",
+                            "description": "A new device was installed"
+                        },
+                        {
+                            "eventid": "4688",
+                            "description": "A new process has been created"
+                        }
+                    ],
+                    "linux_auditd_logs": [
+                        {
+                            "type": "USB",
+                            "description": "USB device connected or disconnected"
+                        },
+                        {
+                            "type": "EXECVE",
+                            "description": "A new process was executed"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "technique_id": "T1199",
+            "technique_name": "Trusted Relationship",
+            "windows_eventids": [
+                {
+                    "eventid": "4624",
+                    "description": "An account was successfully logged on"
+                },
+                {
+                    "eventid": "4688",
+                    "description": "A new process has been created"
+                }
+            ],
+            "linux_auditd_logs": [
+                {
+                    "type": "USER_START",
+                    "description": "A user session started"
+                },
+                {
+                    "type": "EXECVE",
+                    "description": "A new process was executed"
+                }
+            ]
+        },
+        {
+            "technique_id": "T1078",
+            "technique_name": "Valid Accounts",
+            "sub_techniques": [
+                {
+                    "sub_technique_id": "T1078.001",
+                    "sub_technique_name": "Default Accounts",
+                    "windows_eventids": [
+                        {
+                            "eventid": "4624",
+                            "description": "An account was successfully logged on"
+                        },
+                        {
+                            "eventid": "4625",
+                            "description": "An account failed to log on"
+                        },
+                        {
+                            "eventid": "4720",
+                            "description": "A user account was created"
+                        },
+                        {
+                            "eventid": "4722",
+                            "description": "A user account was enabled"
+                        },
+                        {
+                            "eventid": "4723",
+                            "description": "An attempt was made to change an account's password"
+                        },
+                        {
+                            "eventid": "4724",
+                            "description": "An attempt was made to reset an account's password"
+                        },
+                        {
+                            "eventid": "4725",
+                            "description": "A user account was disabled"
+                        },
+                        {
+                            "eventid": "4726",
+                            "description": "A user account was deleted"
+                        }
+                    ],
+                    "linux_auditd_logs": [
+                        {
+                            "type": "USER_AUTH",
+                            "description": "User authentication"
+                        },
+                        {
+                            "type": "CRED_ACQ",
+                            "description": "Acquiring user credentials"
+                        },
+                        {
+                            "type": "CRED_DISP",
+                            "description": "Displaying user credentials"
+                        },
+                        {
+                            "type": "USER_START",
+                            "description": "User session start"
+                        },
+                        {
+                            "type": "USER_END",
+                            "description": "User session end"
+                        }
+                    ]
+                },
+                {
+                    "sub_technique_id": "T1078.002",
+                    "sub_technique_name": "Domain Accounts",
+                    "windows_eventids": [
+                        {
+                            "eventid": "4625",
+                            "description": "Login denied due to account policy restrictions"
+                        },
+                        {
+                            "eventid": "33205",
+                            "description": "Login failure from a single source with a disabled account"
+                        },
+                        {
+                            "eventid": "4624",
+                            "description": "An account was successfully logged on"
+                        },
+                        {
+                            "eventid": "4",
+                            "description": "Success login on OpenSSH server"
+                        },
+                        {
+                            "eventid": "4624",
+                            "description": "An account was successfully logged on"
+                        },
+                        {
+                            "eventid": "1149",
+                            "description": "RDP reconnaissance with valid credentials performed to multiple hosts"
+                        }
+                    ],
+                    "linux_auditd_logs": [
+                        {
+                            "type": "SSH",
+                            "description": "SSH server"
+                        }
+                    ]
+                },
+                {
+                    "sub_technique_id": "T1078.003",
+                    "sub_technique_name": "Local Accounts",
+                    "windows_eventids": [
+                        {
+                            "eventid": "4624",
+                            "description": "An account was successfully logged on"
+                        },
+                        {
+                            "eventid": "4625",
+                            "description": "An account failed to log on"
+                        },
+                        {
+                            "eventid": "4720",
+                            "description": "A user account was created"
+                        },
+                        {
+                            "eventid": "4722",
+                            "description": "A user account was enabled"
+                        },
+                        {
+                            "eventid": "4723",
+                            "description": "An attempt was made to change an account's password"
+                        },
+                        {
+                            "eventid": "4724",
+                            "description": "An attempt was made to reset an account's password"
+                        },
+                        {
+                            "eventid": "4725",
+                            "description": "A user account was disabled"
+                        },
+                        {
+                            "eventid": "4726",
+                            "description": "A user account was deleted"
+                        }
+                    ],
+                    "linux_auditd_logs": [
+                        {
+                            "type": "USER_AUTH",
+                            "description": "Authentication-related events"
+                        },
+                        {
+                            "type": "USER_ACCT",
+                            "description": "User account management events"
+                        },
+                        {
+                            "type": "CRED_ACQ",
+                            "description": "Credential acquisition events"
+                        },
+                        {
+                            "type": "CRED_REFR",
+                            "description": "Credential refresh events"
+                        },
+                        {
+                            "type": "CRED_DISP",
+                            "description": "Credential disposal events"
+                        }
+                    ]
+                },
+                {
+                    "sub_technique_id": "T1078.004",
+                    "sub_technique_name": "Cloud Accounts",
+                    "windows_eventids": [
+                        {
+                            "eventid": "4624",
+                            "description": "An account was successfully logged on"
+                        },
+                        {
+                            "eventid": "4625",
+                            "description": "An account failed to log on"
+                        },
+                        {
+                            "eventid": "4738",
+                            "description": "A user account was changed"
+                        },
+                        {
+                            "eventid": "4720",
+                            "description": "A user account was created"
+                        },
+                        {
+                            "eventid": "4722",
+                            "description": "A user account was enabled"
+                        },
+                        {
+                            "eventid": "4725",
+                            "description": "A user account was disabled"
+                        },
+                        {
+                            "eventid": "4726",
+                            "description": "A user account was deleted"
+                        }
+                    ],
+                    "linux_auditd_logs": []
+                }
+            ]
+        }
+    ]
+}

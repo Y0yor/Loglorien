@@ -1,0 +1,2163 @@
+{
+    "tactic": "Persistence",
+    "techniques": [
+      {
+        "technique_id": "T1098",
+        "technique_name": "Account Manipulation",
+        "sub_techniques": [
+          {
+            "sub_technique_id": "T1098.001",
+            "sub_technique_name": "Additional Cloud Credentials",
+            "windows_eventids": [
+              {
+                "eventid": "4624",
+                "description": "An account was successfully logged on"
+              },
+              {
+                "eventid": "4672",
+                "description": "Special privileges assigned to new logon"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "log": "USER_LOGIN",
+                "description": "Successful user login"
+              },
+              {
+                "log": "USER_END",
+                "description": "User session end"
+              },
+              {
+                "log": "CRED_ACQ",
+                "description": "Credential acquired"
+              },
+              {
+                "log": "CRED_DISP",
+                "description": "Credential disposed"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1098.002",
+            "sub_technique_name": "Additional Email Delegate Permissions",
+            "windows_eventids": [
+              {
+                "eventid": "1028",
+                "description": "An application attempted to send an email"
+              },
+              {
+                "eventid": "1030",
+                "description": "A mailbox was accessed"
+              },
+              {
+                "eventid": "1102",
+                "description": "The audit log was cleared"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "log": "LOGIN",
+                "description": "User logged in"
+              },
+              {
+                "log": "USER_LOGIN",
+                "description": "Successful user login"
+              },
+              {
+                "log": "USER_START",
+                "description": "User session start"
+              },
+              {
+                "log": "USER_END",
+                "description": "User session end"
+              },
+              {
+                "log": "CRED_ACQ",
+                "description": "Credential acquired"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1098.003",
+            "sub_technique_name": "Additional Cloud Roles",
+            "windows_eventids": [
+              {
+                "eventid": "4624",
+                "description": "An account was successfully logged on"
+              },
+              {
+                "eventid": "4672",
+                "description": "Special privileges assigned to new logon"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "log": "USER_LOGIN",
+                "description": "Successful user login"
+              },
+              {
+                "log": "USER_END",
+                "description": "User session end"
+              },
+              {
+                "log": "CRED_ACQ",
+                "description": "Credential acquired"
+              },
+              {
+                "log": "CRED_DISP",
+                "description": "Credential disposed"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1098.004",
+            "sub_technique_name": "SSH Authorized Keys",
+            "windows_eventids": [
+              {
+                "eventid": "800",
+                "description": "OpenSSH native server feature installation"
+              },
+              {
+                "eventid": "4103",
+                "description": "OpenSSH server for Windows activation/configuration detected"
+              },
+              {
+                "eventid": "4104",
+                "description": "SSH server"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "log": "USER_AUTH",
+                "description": "User authentication"
+              },
+              {
+                "log": "USER_LOGIN",
+                "description": "Successful user login"
+              },
+              {
+                "log": "USER_START",
+                "description": "User session start"
+              },
+              {
+                "log": "USER_END",
+                "description": "User session end"
+              },
+              {
+                "log": "CRED_ACQ",
+                "description": "Credential acquired"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1098.005",
+            "sub_technique_name": "Device Registration",
+            "windows_eventids": [
+              {
+                "eventid": "1102",
+                "description": "The audit log was cleared"
+              },
+              {
+                "eventid": "104",
+                "description": "An attempt was made to reset an account's password"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "log": "LOGIN",
+                "description": "User logged in"
+              },
+              {
+                "log": "USER_LOGIN",
+                "description": "Successful user login"
+              },
+              {
+                "log": "USER_START",
+                "description": "User session start"
+              },
+              {
+                "log": "USER_END",
+                "description": "User session end"
+              },
+              {
+                "log": "CRED_ACQ",
+                "description": "Credential acquired"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "technique_id": "T1053",
+        "technique_name": "Scheduled Task/Job",
+        "windows_eventids": [
+            {
+                "eventid": "4698",
+                "description": "A scheduled task was created"
+            },
+            {
+                "eventid": "4699",
+                "description": "A scheduled task was deleted"
+            },
+            {
+                "eventid": "4700",
+                "description": "A scheduled task was enabled"
+            },
+            {
+                "eventid": "4701",
+                "description": "A scheduled task was disabled"
+            },
+            {
+                "eventid": "4702",
+                "description": "A scheduled task was updated"
+            }
+        ],
+        "linux_auditd_logs": [
+            {
+                "type": "CRED_DISP",
+                "description": "Displaying user credentials"
+            },
+            {
+                "type": "USER_START",
+                "description": "User session start"
+            },
+            {
+                "type": "USER_END",
+                "description": "User session end"
+            }
+        ],
+        "sub_techniques": [
+            {
+                "sub_technique_id": "T1053.002",
+                "sub_technique_name": "At",
+                "windows_eventids": [
+                    {
+                        "eventid": "4698",
+                        "description": "A scheduled task was created"
+                    },
+                    {
+                        "eventid": "4699",
+                        "description": "A scheduled task was deleted"
+                    },
+                    {
+                        "eventid": "4700",
+                        "description": "A scheduled task was enabled"
+                    },
+                    {
+                        "eventid": "4701",
+                        "description": "A scheduled task was disabled"
+                    },
+                    {
+                        "eventid": "4702",
+                        "description": "A scheduled task was updated"
+                    }
+                ],
+                "linux_auditd_logs": [
+                    {
+                        "type": "CRED_DISP",
+                        "description": "Displaying user credentials"
+                    },
+                    {
+                        "type": "USER_START",
+                        "description": "User session start"
+                    },
+                    {
+                        "type": "USER_END",
+                        "description": "User session end"
+                    }
+                ]
+            },
+            {
+                "sub_technique_id": "T1053.003",
+                "sub_technique_name": "Cron",
+                "windows_eventids": [],
+                "linux_auditd_logs": [
+                      {
+                          "type": "CRON",
+                          "description": "Cron job execution"
+                      },
+                      {
+                          "type": "CRON_JOB",
+                          "description": "Cron job creation or modification"
+                      }
+                  ]
+              },
+              {
+                  "sub_technique_id": "T1053.005",
+                  "sub_technique_name": "Scheduled Task",
+                  "windows_eventids": [
+                      {
+                          "eventid": "4688",
+                          "description": "A new process has been created"
+                      },
+                      {
+                          "eventid": "5145",
+                          "description": "Remote schedule task creation via named pipes"
+                      },
+                      {
+                          "eventid": "4698",
+                          "description": "A scheduled task was created"
+                      },
+                      {
+                          "eventid": "4699",
+                          "description": "A scheduled task was deleted"
+                      },
+                      {
+                          "eventid": "4700",
+                          "description": "A scheduled task was enabled"
+                      },
+                      {
+                          "eventid": "4701",
+                          "description": "A scheduled task was disabled"
+                      },
+                      {
+                          "eventid": "4702",
+                          "description": "A scheduled task was updated"
+                      }
+                ],
+                "linux_auditd_logs": []
+            },
+            {
+                "sub_technique_id": "T1053.006",
+                "sub_technique_name": "Systemd Timers",
+                "windows_eventids": [],
+                "linux_auditd_logs": [
+                    {
+                        "type": "UNIT",
+                        "description": "Systemd unit start or stop event"
+                    },
+                    {
+                        "type": "UNIT_RESULT",
+                        "description": "Systemd unit result after execution"
+                    }
+                ]
+            },
+            {
+                "sub_technique_id": "T1053.007",
+                "sub_technique_name": "Container Orchestration Job",
+                "windows_eventids": [],
+                "linux_auditd_logs": [
+                    {
+                        "type": "KUBE_AUDIT",
+                        "description": "Kubernetes audit log events"
+                    }
+                ]
+            }
+        ]
+      },
+      {
+        "technique_id": "T1547",
+        "technique_name": "Boot or Logon Autostart Execution",
+        "sub_techniques": [
+          {
+            "sub_technique_id": "T1547.001",
+            "sub_technique_name": "Registry Run Keys / Startup Folder",
+            "windows_eventids": [
+              {
+                "eventid": "13",
+                "description": "Registry value created or modified"
+              },
+              {
+                "eventid": "11",
+                "description": "Registry key created or modified"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "log": "SYSCALL",
+                "description": "System call"
+              },
+              {
+                "log": "PATH",
+                "description": "File or directory related to syscall"
+              },
+              {
+                "log": "PROCTITLE",
+                "description": "Title of the process"
+              },
+              {
+                "log": "CWD",
+                "description": "Current working directory"
+              },
+              {
+                "log": "EXECVE",
+                "description": "Executable and arguments"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1547.002",
+            "sub_technique_name": "Authentication Package",
+            "windows_eventids": [
+              {
+                "eventid": "4610",
+                "description": "An authentication package has been loaded by the Local Security Authority"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "log": "USER_AUTH",
+                "description": "User authentication"
+              },
+              {
+                "log": "USER_LOGIN",
+                "description": "Successful user login"
+              },
+              {
+                "log": "USER_START",
+                "description": "User session start"
+              },
+              {
+                "log": "USER_END",
+                "description": "User session end"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1547.003",
+            "sub_technique_name": "Time Providers",
+            "windows_eventids": [
+              {
+                "eventid": "4616",
+                "description": "The system time was changed"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "log": "SYSCALL",
+                "description": "System call"
+              },
+              {
+                "log": "PATH",
+                "description": "File or directory related to syscall"
+              },
+              {
+                "log": "PROCTITLE",
+                "description": "Title of the process"
+              },
+              {
+                "log": "CWD",
+                "description": "Current working directory"
+              },
+              {
+                "log": "EXECVE",
+                "description": "Executable and arguments"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1547.004",
+            "sub_technique_name": "Winlogon Helper DLL",
+            "windows_eventids": [
+              {
+                "eventid": "13",
+                "description": "Registry value created or modified"
+              },
+              {
+                "eventid": "11",
+                "description": "Registry key created or modified"
+              }
+            ],
+            "linux_auditd_logs": []
+          },
+          {
+            "sub_technique_id": "T1547.005",
+            "sub_technique_name": "Security Support Provider",
+            "windows_eventids": [
+              {
+                "eventid": "4610",
+                "description": "An authentication package has been loaded by the Local Security Authority"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "log": "USER_AUTH",
+                "description": "User authentication"
+              },
+              {
+                "log": "USER_LOGIN",
+                "description": "Successful user login"
+              },
+              {
+                "log": "USER_START",
+                "description": "User session start"
+              },
+              {
+                "log": "USER_END",
+                "description": "User session end"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1547.006",
+            "sub_technique_name": "Kernel Modules and Extensions",
+            "windows_eventids": [
+              {
+                "eventid": "6",
+                "description": "A new kernel module was loaded"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "log": "SYSCALL",
+                "description": "System call"
+              },
+              {
+                "log": "PATH",
+                "description": "File or directory related to syscall"
+              },
+              {
+                "log": "PROCTITLE",
+                "description": "Title of the process"
+              },
+              {
+                "log": "CWD",
+                "description": "Current working directory"
+              },
+              {
+                "log": "EXECVE",
+                "description": "Executable and arguments"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1547.007",
+            "sub_technique_name": "Re-opened Applications",
+            "windows_eventids": [],
+            "linux_auditd_logs": []
+          },
+          {
+            "sub_technique_id": "T1547.008",
+            "sub_technique_name": "LSASS Driver",
+            "windows_eventids": [
+              {
+                "eventid": "6",
+                "description": "A new kernel module was loaded"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "log": "SYSCALL",
+                "description": "System call"
+              },
+              {
+                "log": "PATH",
+                "description": "File or directory related to syscall"
+              },
+              {
+                "log": "PROCTITLE",
+                "description": "Title of the process"
+              },
+              {
+                "log": "CWD",
+                "description": "Current working directory"
+              },
+              {
+                "log": "EXECVE",
+                "description": "Executable and arguments"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1547.009",
+            "sub_technique_name": "Shortcut Modification",
+            "windows_eventids": [
+              {
+                "eventid": "15",
+                "description": "A shortcut file was created or modified"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "log": "SYSCALL",
+                "description": "System call"
+              },
+              {
+                "log": "PATH",
+                "description": "File or directory related to syscall"
+              },
+              {
+                "log": "PROCTITLE",
+                "description": "Title of the process"
+              },
+              {
+                "log": "CWD",
+                "description": "Current working directory"
+              },
+              {
+                "log": "EXECVE",
+                "description": "Executable and arguments"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1547.010",
+            "sub_technique_name": "Port Monitors",
+            "windows_eventids": [
+              {
+                "eventid": "13",
+                "description": "Registry value created or modified"
+              },
+              {
+                "eventid": "11",
+                "description": "Registry key created or modified"
+              }
+            ],
+            "linux_auditd_logs": []
+          },
+          {
+            "sub_technique_id": "T1547.012",
+            "sub_technique_name": "Print Processors",
+            "windows_eventids": [
+              {
+                "eventid": "13",
+                "description": "Registry value created or modified"
+              },
+              {
+                "eventid": "11",
+                "description": "Registry key created or modified"
+              }
+            ],
+            "linux_auditd_logs": []
+          },
+          {
+            "sub_technique_id": "T1547.013",
+            "sub_technique_name": "XDG Autostart Entries",
+            "windows_eventids": [],
+            "linux_auditd_logs": [
+              {
+                "log": "SYSCALL",
+                "description": "System call"
+              },
+              {
+                "log": "PATH",
+                "description": "File or directory related to syscall"
+              },
+              {
+                "log": "PROCTITLE",
+                "description": "Title of the process"
+              },
+              {
+                "log": "CWD",
+                "description": "Current working directory"
+              },
+              {
+                "log": "EXECVE",
+                "description": "Executable and arguments"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1547.014",
+            "sub_technique_name": "Active Setup",
+            "windows_eventids": [
+              {
+                "eventid": "13",
+                "description": "Registry value created or modified"
+              },
+              {
+                "eventid": "11",
+                "description": "Registry key created or modified"
+              }
+            ],
+            "linux_auditd_logs": []
+          },
+          {
+            "sub_technique_id": "T1547.015",
+            "sub_technique_name": "Login Items",
+            "windows_eventids": [],
+            "linux_auditd_logs": [
+              {
+                "log": "SYSCALL",
+                "description": "System call"
+              },
+              {
+                "log": "PATH",
+                "description": "File or directory related to syscall"
+              },
+              {
+                "log": "PROCTITLE",
+                "description": "Title of the process"
+              },
+              {
+                "log": "CWD",
+                "description": "Current working directory"
+              },
+              {
+                "log": "EXECVE",
+                "description": "Executable and arguments"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "technique_id": "T1197",
+        "technique_name": "BITS Jobs",
+        "windows_eventids": [
+          {
+            "eventid": "3",
+            "description": "A BITS job was created"
+          },
+          {
+            "eventid": "59",
+            "description": "BITS jobs history was deleted"
+          }
+        ],
+        "linux_auditd_logs": []
+      },
+      {
+        "technique_id": "T1176",
+        "technique_name": "Browser Extensions",
+        "windows_eventids": [
+          {
+            "eventid": "1001",
+            "description": "An Internet Explorer extension was installed"
+          }
+        ],
+        "linux_auditd_logs": [
+          {
+            "type": "PATH",
+            "description": "Records the file path accessed or modified"
+          },
+          {
+            "type": "PROCTITLE",
+            "description": "Records the process title and command-line arguments"
+          },
+          {
+            "type": "CWD",
+            "description": "Records the current working directory of the process"
+          },
+          {
+            "type": "EXECVE",
+            "description": "Records the execution of new processes and their command-line arguments"
+          }
+        ]
+      },
+      {
+        "technique_id": "T1505",
+        "technique_name": "Compromise Client Software Binary",
+        "windows_eventids": [
+          {
+            "eventid": "4697",
+            "description": "A service was installed in the system"
+          },
+          {
+            "eventid": "4688",
+            "description": "A new process has been created"
+          },
+          {
+            "eventid": "5145",
+            "description": "A network share object was checked to see whether the client can be granted desired access"
+          }
+        ],
+        "linux_auditd_logs": [
+          {
+            "type": "SYSCALL",
+            "description": "Records system call events, including event metadata and return values"
+          },
+          {
+            "type": "USER_AUTH",
+            "description": "Records user authentication events, including username and authentication method"
+          },
+          {
+            "type": "CRED_ACQ",
+            "description": "Records when credentials are acquired by a user or process"
+          },
+          {
+            "type": "CRED_DISP",
+            "description": "Records when credentials are disposed of by a user or process"
+          },
+          {
+            "type": "EXECVE",
+            "description": "Records the execution of new processes and their command-line arguments"
+          }
+        ]
+      },
+      {
+        "technique_id": "T1133",
+        "technique_name": "External Remote Services",
+        "windows_eventids": [
+          {
+            "eventid": "4624",
+            "description": "An account was successfully logged on"
+          },
+          {
+            "eventid": "4778",
+            "description": "A session was reconnected to a Window Station"
+          },
+          {
+            "eventid": "4779",
+            "description": "A session was disconnected from a Window Station"
+          }
+        ],
+        "linux_auditd_logs": [
+          {
+            "type": "USER_LOGIN",
+            "description": "Records when a user logs in or logs out of a system"
+          },
+          {
+            "type": "USER_END",
+            "description": "Records the end of a user session"
+          },
+          {
+            "type": "CRED_ACQ",
+            "description": "Records when credentials are acquired by a user or process"
+          },
+          {
+            "type": "CRED_DISP",
+            "description": "Records when credentials are disposed of by a user or process"
+          }
+        ]
+      },
+      {
+        "technique_id": "T1037",
+        "technique_name": "Boot or Logon Initialization Scripts",
+        "sub_techniques": [
+          {
+            "sub_technique_id": "T1037.001",
+            "sub_technique_name": "Logon Script (Windows)",
+            "windows_eventids": [
+              {
+                "eventid": "8004",
+                "description": "A Group Policy object was applied"
+              },
+              {
+                "eventid": "8005",
+                "description": "Group Policy Scripts Extension Processing"
+              }
+            ],
+            "linux_auditd_logs": []
+          },
+          {
+            "sub_technique_id": "T1037.002",
+            "sub_technique_name": "Login Hook",
+            "windows_eventids": [],
+            "linux_auditd_logs": [
+              {
+                "type": "EXECVE",
+                "description": "Records the execution of a program"
+              },
+              {
+                "type": "CWD",
+                "description": "Records the current working directory of a process"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1037.003",
+            "sub_technique_name": "Network Logon Script",
+            "windows_eventids": [
+              {
+                "eventid": "8004",
+                "description": "A Group Policy object was applied"
+              },
+              {
+                "eventid": "8005",
+                "description": "Group Policy Scripts Extension Processing"
+              }
+            ],
+            "linux_auditd_logs": []
+          },
+          {
+            "sub_technique_id": "T1037.004",
+            "sub_technique_name": "RC Scripts",
+            "windows_eventids": [],
+            "linux_auditd_logs": [
+              {
+                "type": "EXECVE",
+                "description": "Records the execution of a program"
+              },
+              {
+                "type": "CWD",
+                "description": "Records the current working directory of a process"
+              },
+              {
+                "type": "PATH",
+                "description": "Records file and directory access by a process"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1037.005",
+            "sub_technique_name": "Startup Items",
+            "windows_eventids": [
+              {
+                "eventid": "13",
+                "description": "Registry value created or modified"
+              },
+              {
+                "eventid": "11",
+                "description": "Registry key created or modified"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "type": "EXECVE",
+                "description": "Records the execution of a program"
+              },
+              {
+                "type": "CWD",
+                "description": "Records the current working directory of a process"
+              },
+              {
+                "type": "PATH",
+                "description": "Records file and directory access by a process"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "technique_id": "T1136",
+        "technique_name": "Create Account",
+        "sub_techniques": [
+          {
+            "sub_technique_id": "T1136.001",
+            "sub_technique_name": "Local Account",
+            "windows_eventids": [
+              {
+                "eventid": "4720",
+                "description": "A user account was created"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "type": "ADD_USER",
+                "description": "Records when a user is added to the system"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1136.002",
+            "sub_technique_name": "Domain Account",
+            "windows_eventids": [
+              {
+                "eventid": "4720",
+                "description": "A user account was created"
+              },
+              {
+                "eventid": "4722",
+                "description": "A user account was enabled"
+              }
+            ],
+            "linux_auditd_logs": []
+          },
+          {
+            "sub_technique_id": "T1136.003",
+            "sub_technique_name": "Cloud Account",
+            "windows_eventids": [],
+            "linux_auditd_logs": []
+          }
+        ]
+      },
+      {
+        "technique_id": "T1543",
+        "technique_name": "Create or Modify System Process",
+        "sub_techniques": [
+          {
+            "sub_technique_id": "T1543.001",
+            "sub_technique_name": "Launch Agent",
+            "windows_eventids": [
+              {
+                "eventid": "13",
+                "description": "Registry value created or modified"
+              },
+              {
+                "eventid": "11",
+                "description": "Registry key created or modified"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "type": "EXECVE",
+                "description": "Records the execution of a program"
+              },
+              {
+                "type": "CWD",
+                "description": "Records the current working directory of a process"
+              },
+              {
+                "type": "PATH",
+                "description": "Records file and directory access by a process"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1543.002",
+            "sub_technique_name": "Systemd Service",
+            "windows_eventids": [],
+            "linux_auditd_logs": [
+              {
+                "type": "SYSCALL",
+                "description": "Records system calls made by a process"
+              },
+              {
+                "type": "EXECVE",
+                "description": "Records the execution of a program"
+              },
+              {
+                "type": "CWD",
+                "description": "Records the current working directory of a process"
+              },
+              {
+                "type": "PATH",
+                "description": "Records file and directory access by a process"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1543.003",
+            "sub_technique_name": "Windows Service",
+            "windows_eventids": [
+              {
+                "eventid": "4697",
+                "description": "A service was installed in the system"
+              },
+              {
+                "eventid": "4688",
+                "description": "A new process has been created"
+              }
+            ],
+            "linux_auditd_logs": []
+          },
+          {
+            "sub_technique_id": "T1543.004",
+            "sub_technique_name": "Launch Daemon",
+            "windows_eventids": [],
+            "linux_auditd_logs": [
+              {
+                "type": "SYSCALL",
+                "description": "Records system calls made by a process"
+              },
+              {
+                "type": "EXECVE",
+                "description": "Records the execution of a program"
+              },
+              {
+                "type": "CWD",
+                "description": "Records the current working directory of a process"
+              },
+              {
+                "type": "PATH",
+                "description": "Records file and directory access by a process"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "technique_id": "T1546",
+        "technique_name": "Event Triggered Execution",
+        "sub_techniques": [
+          {
+            "sub_technique_id": "T1546.001",
+            "sub_technique_name": "Change Default File Association",
+            "windows_eventids": [
+              {
+                "eventid": "13",
+                "description": "Registry value created or modified"
+              },
+              {
+                "eventid": "11",
+                "description": "Registry key created or modified"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "log_type": "SYSCALL",
+                "description": "Records system calls made by a process"
+              },
+              {
+                "log_type": "PATH",
+                "description": "Records file and directory access by a process"
+              },
+              {
+                "log_type": "PROCTITLE",
+                "description": "Records the command-line arguments of a process"
+              },
+              {
+                "log_type": "CWD",
+                "description": "Records the current working directory of a process"
+              },
+              {
+                "log_type": "EXECVE",
+                "description": "Records the execution of a program"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1546.002",
+            "sub_technique_name": "Screensaver",
+            "windows_eventids": [
+              {
+                "eventid": "13",
+                "description": "Registry value created or modified"
+              },
+              {
+                "eventid": "11",
+                "description": "Registry key created or modified"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "log_type": "SYSCALL",
+                "description": "Records system calls made by a process"
+              },
+              {
+                "log_type": "PATH",
+                "description": "Records file and directory access by a process"
+              },
+              {
+                "log_type": "PROCTITLE",
+                "description": "Records the command-line arguments of a process"
+              },
+              {
+                "log_type": "CWD",
+                "description": "Records the current working directory of a process"
+              },
+              {
+                "log_type": "EXECVE",
+                "description": "Records the execution of a program"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1546.003",
+            "sub_technique_name": "Windows Management Instrumentation Event Subscription",
+            "windows_eventids": [
+              {
+                "eventid": "5861",
+                "description": "A WMI event filter was registered"
+              },
+              {
+                "eventid": "5860",
+                "description": "A WMI event consumer was registered"
+              },
+              {
+                "eventid": "5859",
+                "description": "A WMI event filter to consumer binding was registered"
+              }
+            ],
+            "linux_auditd_logs": []
+          },
+          {
+            "sub_technique_id": "T1546.004",
+            "sub_technique_name": "Unix Shell Configuration Modification",
+            "windows_eventids": [],
+            "linux_auditd_logs": [
+              {
+                "log_type": "SYSCALL",
+                "description": "Records system calls made by a process"
+              },
+              {
+                "log_type": "PATH",
+                "description": "Records file and directory access by a process"
+              },
+              {
+                "log_type": "PROCTITLE",
+                "description": "Records the command-line arguments of a process"
+              },
+              {
+                "log_type": "CWD",
+                "description": "Records the current working directory of a process"
+              },
+              {
+                "log_type": "EXECVE",
+                "description": "Records the execution of a program"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1546.005",
+            "sub_technique_name": "Trap",
+            "windows_eventids": [],
+            "linux_auditd_logs": [
+              {
+                "log_type": "SYSCALL",
+                "description": "Records system calls made by a process"
+              },
+              {
+                "log_type": "PATH",
+                "description": "Records file and directory access by a process"
+              },
+              {
+                "log_type": "PROCTITLE",
+                "description": "Records the command-line arguments of a process"
+              },
+              {
+                "log_type": "CWD",
+                "description": "Records the current working directory of a process"
+              },
+              {
+                "log_type": "EXECVE",
+                "description": "Records the execution of a program"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1546.006",
+            "sub_technique_name": "LC_LOAD_DYLIB Addition",
+            "windows_eventids": [],
+            "linux_auditd_logs": [
+              {
+                "log_type": "SYSCALL",
+                "description": "Records system calls made by a process"
+              },
+              {
+                "log_type": "PATH",
+                "description": "Records file and directory access by a process"
+              },
+              {
+                "log_type": "PROCTITLE",
+                "description": "Records the command-line arguments of a process"
+              },
+              {
+                "log_type": "CWD",
+                "description": "Records the current working directory of a process"
+              },
+              {
+                "log_type": "EXECVE",
+                "description": "Records the execution of a program"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1546.007",
+            "sub_technique_name": "Netsh Helper DLL",
+            "windows_eventids": [
+              {
+                "eventid": "13",
+                "description": "Registry value created or modified"
+              },
+              {
+                "eventid": "11",
+                "description": "Registry key created or modified"
+              }
+            ],
+            "linux_auditd_logs": []
+          },
+          {
+            "sub_technique_id": "T1546.008",
+            "sub_technique_name": "Accessibility Features",
+            "windows_eventids": [
+              {
+                "eventid": "13",
+                "description": "Registry value created or modified"
+              },
+              {
+                "eventid": "11",
+                "description": "Registry key created or modified"
+              }
+            ],
+            "linux_auditd_logs": []
+          },
+          {
+            "sub_technique_id": "T1546.009",
+            "sub_technique_name": "AppCert DLLs",
+            "windows_eventids": [
+              {
+                "eventid": "13",
+                "description": "Registry value created or modified"
+              },
+              {
+                "eventid": "11",
+                "description": "Registry key created or modified"
+              }
+            ],
+            "linux_auditd_logs": []
+          },
+          {
+            "sub_technique_id": "T1546.010",
+            "sub_technique_name": "AppInit DLLs",
+            "windows_eventids": [
+              {
+                "eventid": "13",
+                "description": "Registry value created or modified"
+              },
+              {
+                "eventid": "11",
+                "description": "Registry key created or modified"
+              }
+            ],
+            "linux_auditd_logs": []
+          },
+          {
+            "sub_technique_id": "T1546.011",
+            "sub_technique_name": "Application Shimming",
+            "windows_eventids": [
+              {
+                "eventid": "13",
+                "description": "Registry value created or modified"
+              },
+              {
+                "eventid": "11",
+                "description": "Registry key created or modified"
+              }
+            ],
+            "linux_auditd_logs": []
+          },
+          {
+            "sub_technique_id": "T1546.012",
+            "sub_technique_name": "Image File Execution Options Injection",
+            "windows_eventids": [
+              {
+                "eventid": "13",
+                "description": "Registry value created or modified"
+              },
+              {
+                "eventid": "11",
+                "description": "Registry key created or modified"
+              }
+            ],
+            "linux_auditd_logs": []
+          },
+          {
+            "sub_technique_id": "T1546.013",
+            "sub_technique_name": "PowerShell Profile",
+            "windows_eventids": [
+              {
+                "eventid": "4103",
+                "description": "A new PowerShell script block was created"
+              },
+              {
+                "eventid": "4104",
+                "description": "A new PowerShell script block was executed"
+              }
+            ],
+            "linux_auditd_logs": []
+          },
+          {
+            "sub_technique_id": "T1546.014",
+            "sub_technique_name": "Emond",
+            "windows_eventids": [],
+            "linux_auditd_logs": [
+              {
+                "log_type": "SYSCALL",
+                "description": "Records system calls made by a process"
+              },
+              {
+                "log_type": "PATH",
+                "description": "Records file and directory access by a process"
+              },
+              {
+                "log_type": "PROCTITLE",
+                "description": "Records the command-line arguments of a process"
+              },
+              {
+                "log_type": "CWD",
+                "description": "Records the current working directory of a process"
+              },
+              {
+                "log_type": "EXECVE",
+                "description": "Records the execution of a program"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1546.015",
+            "sub_technique_name": "Component Object Model Hijacking",
+            "windows_eventids": [
+              {
+                "eventid": "13",
+                "description": "Registry value created or modified"
+              },
+              {
+                "eventid": "11",
+                "description": "Registry key created or modified"
+              }
+            ],
+            "linux_auditd_logs": []
+          },
+          {
+            "sub_technique_id": "T1546.016",
+            "sub_technique_name": "Installer Packages",
+            "windows_eventids": [
+              {
+                "eventid": "1040",
+                "description": "Beginning a Windows Installer transaction"
+              },
+              {
+                "eventid": "1033",
+                "description": "Windows Installer completed an installation"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "log_type": "SYSCALL",
+                "description": "Records system calls made by a process"
+              },
+              {
+                "log_type": "PATH",
+                "description": "Records file and directory access by a process"
+              },
+              {
+                "log_type": "PROCTITLE",
+                "description": "Records command-line arguments of a process"
+              },
+              {
+                "log_type": "CWD",
+                "description": "Records the current working directory of a process"
+              },
+              {
+                "log_type": "EXECVE",
+                "description": "Records the execution of a program"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "technique_id": "T1574",
+        "technique_name": "Hijack Execution Flow",
+        "sub_techniques": [
+          {
+            "sub_technique_id": "T1574.001",
+            "sub_technique_name": "DLL Search Order Hijacking",
+            "windows_eventids": [
+              {
+                "eventid": "7",
+                "description": "A new file was created on a file share"
+              },
+              {
+                "eventid": "4688",
+                "description": "A new process has been created"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "log_type": "PATH",
+                "description": "Records the file system path related to the event"
+              },
+              {
+                "log_type": "PROCTITLE",
+                "description": "Records the command-line arguments of a process"
+              },
+              {
+                "log_type": "EXECVE",
+                "description": "Records the execution of a program"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1574.002",
+            "sub_technique_name": "DLL Side-Loading",
+            "windows_eventids": [
+              {
+                "eventid": "7",
+                "description": "A new file was created on a file share"
+              },
+              {
+                "eventid": "4688",
+                "description": "A new process has been created"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "log_type": "PATH",
+                "description": "Records the file system path related to the event"
+              },
+              {
+                "log_type": "PROCTITLE",
+                "description": "Records the command-line arguments of a process"
+              },
+              {
+                "log_type": "EXECVE",
+                "description": "Records the execution of a program"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1574.003",
+            "sub_technique_name": "Dylib Hijacking",
+            "windows_eventids": [],
+            "linux_auditd_logs": [
+              {
+                "log_type": "PATH",
+                "description": "Records the file system path related to the event"
+              },
+              {
+                "log_type": "PROCTITLE",
+                "description": "Records the command-line arguments of a process"
+              },
+              {
+                "log_type": "EXECVE",
+                "description": "Records the execution of a program"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1574.004",
+            "sub_technique_name": "Executable Installer File Permissions Weakness",
+            "windows_eventids": [
+              {
+                "eventid": "4697",
+                "description": "A service was installed in the system"
+              },
+              {
+                "eventid": "4688",
+                "description": "A new process has been created"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "log_type": "PATH",
+                "description": "Records the file system path related to the event"
+              },
+              {
+                "log_type": "PROCTITLE",
+                "description": "Records the command-line arguments of a process"
+              },
+              {
+                "log_type": "EXECVE",
+                "description": "Records the execution of a program"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1574.005",
+            "sub_technique_name": "Dynamic Linker Hijacking",
+            "windows_eventids": [],
+            "linux_auditd_logs": [
+              {
+                "log_type": "PATH",
+                "description": "Records the file system path related to the event"
+              },
+              {
+                "log_type": "PROCTITLE",
+                "description": "Records the command-line arguments of a process"
+              },
+              {
+                "log_type": "EXECVE",
+                "description": "Records the execution of a program"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1574.006",
+            "sub_technique_name": "Path Interception by PATH Environment Variable",
+            "windows_eventids": [
+              {
+                "eventid": "4688",
+                "description": "A new process has been created"
+              },
+              {
+                "eventid": "11",
+                "description": "Registry key created or modified"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "log_type": "PATH",
+                "description": "Records the file system path related to the event"
+              },
+              {
+                "log_type": "PROCTITLE",
+                "description": "Records the command-line arguments of a process"
+              },
+              {
+                "log_type": "EXECVE",
+                "description": "Records the execution of a program"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1574.007",
+            "sub_technique_name": "Path Interception by Search Order Hijacking",
+            "windows_eventids": [
+              {
+                "eventid": "4688",
+                "description": "A new process has been created"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "log_type": "PATH",
+                "description": "Records the file system path related to the event"
+              },
+              {
+                "log_type": "PROCTITLE",
+                "description": "Records the command-line arguments of a process"
+              },
+              {
+                "log_type": "EXECVE",
+                "description": "Records the execution of a program"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1574.008",
+            "sub_technique_name": "Path Interception by Unquoted Path",
+            "windows_eventids": [
+              {
+                "eventid": "4688",
+                "description": "A new process has been created"
+              }
+            ],
+            "linux_auditd_logs": []
+          },
+          {
+            "sub_technique_id": "T1574.009",
+            "sub_technique_name": "Services File Permissions Weakness",
+            "windows_eventids": [
+              {
+                "eventid": "4697",
+                "description": "A service was installed in the system"
+              },
+              {
+                "eventid": "4688",
+                "description": "A new process has been created"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "log_type": "PATH",
+                "description": "Records the file system path related to the event"
+              },
+              {
+                "log_type": "PROCTITLE",
+                "description": "Records the command-line arguments of a process"
+              },
+              {
+                "log_type": "EXECVE",
+                "description": "Records the execution of a program"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1574.010",
+            "sub_technique_name": "Services Registry Permissions Weakness",
+            "windows_eventids": [
+              {
+                "eventid": "4697",
+                "description": "A service was installed in the system"
+              },
+              {
+                "eventid": "4688",
+                "description": "A new process has been created"
+              },
+              {
+                "eventid": "11",
+                "description": "Registry key created or modified"
+              }
+            ],
+            "linux_auditd_logs": []
+          },
+          {
+            "sub_technique_id": "T1574.011",
+            "sub_technique_name": "COR_PROFILER",
+            "windows_eventids": [
+              {
+                "eventid": "4688",
+                "description": "A new process has been created"
+              },
+              {
+                "eventid": "11",
+                "description": "Registry key created or modified"
+              }
+            ],
+            "linux_auditd_logs": []
+          },
+          {
+            "sub_technique_id": "T1574.012",
+            "sub_technique_name": "KernelCallbackTable",
+            "windows_eventids": [
+              {
+                "eventid": "4697",
+                "description": "A service was installed in the system"
+              },
+              {
+                "eventid": "4688",
+                "description": "A new process has been created"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "log_type": "PATH",
+                "description": "Records the file system path related to the event"
+              },
+              {
+                "log_type": "PROCTITLE",
+                "description": "Records the command-line arguments of a process"
+              },
+              {
+                "log_type": "EXECVE",
+                "description": "Records the execution of a program"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "technique_id": "T1556",
+        "technique_name": "Modify Authentication Process",
+        "sub_techniques": [
+          {
+            "sub_technique_id": "T1556.001",
+            "sub_technique_name": "Domain Controller Authentication",
+            "windows_eventids": [
+              {
+                "eventid": "4624",
+                "description": "An account was successfully logged on"
+              },
+              {
+                "eventid": "4776",
+                "description": "The computer attempted to validate the credentials for an account"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "log_type": "USER_LOGIN",
+                "description": "Records user logins"
+              },
+              {
+                "log_type": "USER_END",
+                "description": "Records user logout"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1556.002",
+            "sub_technique_name": "Password Filter DLL",
+            "windows_eventids": [
+              {
+                "eventid": "11",
+                "description": "Registry key created or modified"
+              }
+            ],
+            "linux_auditd_logs": []
+          },
+          {
+            "sub_technique_id": "T1556.003",
+            "sub_technique_name": "Pluggable Authentication Modules",
+            "windows_eventids": [],
+            "linux_auditd_logs": [
+              {
+                "log_type": "CONFIG_CHANGE",
+                "description": "Records changes in system configuration"
+              },
+              {
+                "log_type": "PATH",
+                "description": "Records the file system path related to the event"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1556.004",
+            "sub_technique_name": "Network Device Authentication",
+            "windows_eventids": [
+              {
+                "eventid": "4624",
+                "description": "An account was successfully logged on"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "log_type": "USER_LOGIN",
+                "description": "Records user logins"
+              },
+              {
+                "log_type": "USER_END",
+                "description": "Records user logout"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1556.005",
+            "sub_technique_name": "Reversible Encryption",
+            "windows_eventids": [],
+            "linux_auditd_logs": []
+          },
+          {
+            "sub_technique_id": "T1556.006",
+            "sub_technique_name": "Multi-Factor Authentication",
+            "windows_eventids": [],
+            "linux_auditd_logs": []
+          },
+          {
+            "sub_technique_id": "T1556.007",
+            "sub_technique_name": "Hybrid Identity",
+            "windows_eventids": [
+              {
+                "eventid": "4624",
+                "description": "An account was successfully logged on"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "log_type": "USER_LOGIN",
+                "description": "Records user logins"
+              },
+              {
+                "log_type": "USER_END",
+                "description": "Records user logout"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "technique_id": "T1137",
+        "technique_name": "Office Application Startup",
+        "sub_techniques": [
+          {
+            "sub_technique_id": "T1137.001",
+            "sub_technique_name": "Office Template Macros",
+            "windows_eventids": [
+              {
+                "eventid": "300",
+                "description": "An Office application started"
+              },
+              {
+                "eventid": "301",
+                "description": "Office application encountered an error during the start"
+              }
+            ],
+            "linux_auditd_logs": []
+          },
+          {
+            "sub_technique_id": "T1137.002",
+            "sub_technique_name": "Office Test",
+            "windows_eventids": [
+              {
+                "eventid": "300",
+                "description": "An Office application started"
+              },
+              {
+                "eventid": "301",
+                "description": "Office application encountered an error during the start"
+              }
+            ],
+            "linux_auditd_logs": []
+          },
+          {
+            "sub_technique_id": "T1137.003",
+            "sub_technique_name": "Outlook Forms",
+            "windows_eventids": [
+              {
+                "eventid": "300",
+                "description": "An Office application started"
+              },
+              {
+                "eventid": "301",
+                "description": "Office application encountered an error during the start"
+              }
+            ],
+            "linux_auditd_logs": []
+          },
+          {
+            "sub_technique_id": "T1137.004",
+            "sub_technique_name": "Outlook Home Page",
+            "windows_eventids": [
+              {
+                "eventid": "300",
+                "description": "An Office application started"
+              },
+              {
+                "eventid": "301",
+                "description": "Office application encountered an error during the start"
+              }
+            ],
+            "linux_auditd_logs": []
+          },
+          {
+            "sub_technique_id": "T1137.005",
+            "sub_technique_name": "Outlook Rules",
+            "windows_eventids": [
+              {
+                "eventid": "300",
+                "description": "An Office application started"
+              },
+              {
+                "eventid": "301",
+                "description": "Office application encountered an error during the start"
+              }
+            ],
+            "linux_auditd_logs": []
+          },
+          {
+            "sub_technique_id": "T1137.006",
+            "sub_technique_name": "Add-ins",
+            "windows_eventids": [
+              {
+                "eventid": "300",
+                "description": "An Office application started"
+              },
+              {
+                "eventid": "301",
+                "description": "Office application encountered an error during the start"
+              }
+            ],
+            "linux_auditd_logs": []
+          }
+        ]
+      },
+      {
+        "technique_id": "T1542",
+        "technique_name": "Pre-OS Boot",
+        "sub_techniques": [
+          {
+            "sub_technique_id": "T1542.001",
+            "sub_technique_name": "System Firmware",
+            "windows_eventids": [],
+            "linux_auditd_logs": [
+              {
+                "type": "audit=1",
+                "description": "System boot"
+              },
+              {
+                "type": "EXECVE",
+                "description": "Execution of a process"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1542.002",
+            "sub_technique_name": "Component Firmware",
+            "windows_eventids": [],
+            "linux_auditd_logs": [
+              {
+                "type": "audit=1",
+                "description": "System boot"
+              },
+              {
+                "type": "EXECVE",
+                "description": "Execution of a process"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1542.003",
+            "sub_technique_name": "Bootkit",
+            "windows_eventids": [
+              {
+                "eventid": "13",
+                "description": "Registry value created or modified"
+              },
+              {
+                "eventid": "11",
+                "description": "Registry key created or modified"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "type": "audit=1",
+                "description": "System boot"
+              },
+              {
+                "type": "EXECVE",
+                "description": "Execution of a process"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1542.004",
+            "sub_technique_name": "ROMMONkit",
+            "windows_eventids": [],
+            "linux_auditd_logs": [
+              {
+                "type": "audit=1",
+                "description": "System boot"
+              },
+              {
+                "type": "EXECVE",
+                "description": "Execution of a process"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1542.005",
+            "sub_technique_name": "TFTP Boot",
+            "windows_eventids": [
+              {
+                "eventid": "5145",
+                "description": "A network share object was checked to see whether the client can be granted desired access"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "type": "audit=1",
+                "description": "System boot"
+              },
+              {
+                "type": "EXECVE",
+                "description": "Execution of a process"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "technique_id": "T1505",
+        "technique_name": "Server Software Component",
+        "sub_techniques": [
+          {
+            "sub_technique_id": "T1505.001",
+            "sub_technique_name": "SQL Stored Procedures",
+            "windows_eventids": [
+              {
+                "eventid": "18454",
+                "description": "A SQL stored procedure was created or modified"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "type": "SYSCALL",
+                "description": "System call trace"
+              },
+              {
+                "type": "EXECVE",
+                "description": "Execution of a process"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1505.002",
+            "sub_technique_name": "Transport Agent",
+            "windows_eventids": [
+              {
+                "eventid": "2080",
+                "description": "Transport agent registration"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "type": "SYSCALL",
+                "description": "System call trace"
+              },
+              {
+                "type": "EXECVE",
+                "description": "Execution of a process"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1505.003",
+            "sub_technique_name": "Web Shell",
+            "windows_eventids": [
+              {
+                "eventid": "1102",
+                "description": "The audit log was cleared"
+              },
+              {
+                "eventid": "4624",
+                "description": "An account was successfully logged on"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "type": "SYSCALL",
+                "description": "System call trace"
+              },
+              {
+                "type": "EXECVE",
+                "description": "Execution of a process"
+              },
+              {
+                "type": "CRED_ACQ",
+                "description": "Acquisition of user credentials"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1505.004",
+            "sub_technique_name": "IIS Components",
+            "windows_eventids": [
+              {
+                "eventid": "640",
+                "description": "General administration events for Internet Information Services (IIS) components"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "type": "SYSCALL",
+                "description": "System call trace"
+              },
+              {
+                "type": "EXECVE",
+                "description": "Execution of a process"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1505.005",
+            "sub_technique_name": "Terminal Services DLL",
+            "windows_eventids": [
+              {
+                "eventid": "1040",
+                "description": "Terminal Services DLL loaded"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "type": "SYSCALL",
+                "description": "System call trace"
+              },
+              {
+                "type": "EXECVE",
+                "description": "Execution of a process"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "technique_id": "T1205",
+        "technique_name": "Traffic Signaling",
+        "sub_techniques": [
+          {
+            "sub_technique_id": "T1205.001",
+            "sub_technique_name": "Port Knocking",
+            "windows_eventids": [
+              {
+                "eventid": "5156",
+                "description": "The Windows Filtering Platform has permitted a connection"
+              },
+              {
+                "eventid": "5157",
+                "description": "The Windows Filtering Platform has blocked a connection"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "type": "SYSCALL",
+                "description": "System call trace"
+              },
+              {
+                "type": "SOCKADDR",
+                "description": "Socket address trace"
+              }
+            ]
+          },
+          {
+            "sub_technique_id": "T1205.002",
+            "sub_technique_name": "Socket Filters",
+            "windows_eventids": [
+              {
+                "eventid": "5156",
+                "description": "The Windows Filtering Platform has permitted a connection"
+              },
+              {
+                "eventid": "5157",
+                "description": "The Windows Filtering Platform has blocked a connection"
+              }
+            ],
+            "linux_auditd_logs": [
+              {
+                "type": "SYSCALL",
+                "description": "System call trace"
+              },
+              {
+                "type": "SOCKADDR",
+                "description": "Socket address trace"
+              },
+              {
+                "type": "SOCKETCALL",
+                "description": "Socket-specific system call"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }

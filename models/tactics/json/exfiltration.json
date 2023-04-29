@@ -1,0 +1,347 @@
+{
+    "tactic": "Exfiltration",
+    "techniques": [
+        {
+            "technique_id": "T1020",
+            "technique_name": "Automated Exfiltration",
+            "windows_eventids": [
+                {
+                    "eventid": "3",
+                    "description": "A network connection was made using an application"
+                }
+            ],
+            "linux_auditd_logs": [
+                {
+                    "type": "SOCKADDR",
+                    "description": "Network connection information"
+                }
+            ],
+            "sub_techniques": [
+                {
+                    "sub_technique_id": "T1020.001",
+                    "sub_technique_name": "Traffic Duplication",
+                    "windows_eventids": [
+                        {
+                            "eventid": "3",
+                            "description": "A network connection was made using an application"
+                        }
+                    ],
+                    "linux_auditd_logs": [
+                        {
+                            "type": "SOCKADDR",
+                            "description": "Network connection information"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "technique_id": "T1048.002",
+            "technique_name": "Data Transfer Size Limits",
+            "windows_eventids": [
+                {
+                    "eventid": "3",
+                    "description": "A network connection was made using an application"
+                }
+            ],
+            "linux_auditd_logs": [
+                {
+                    "type": "SOCKADDR",
+                    "description": "Network connection information"
+                }
+            ]
+        },
+        {
+            "technique_id": "T1048",
+            "technique_name": "Exfiltration Over Alternative Protocol",
+            "windows_eventids": [
+                {
+                    "eventid": "3",
+                    "description": "A network connection was made using an application"
+                },
+                {
+                    "eventid": "23",
+                    "description": "File deletion activity"
+                }
+            ],
+            "linux_auditd_logs": [
+                {
+                    "type": "SOCKADDR",
+                    "description": "Network connection information"
+                },
+                {
+                    "type": "PATH",
+                    "description": "File deletion activity"
+                }
+            ],
+            "sub_techniques": [
+                {
+                    "sub_technique_id": "T1048.001",
+                    "sub_technique_name": "Exfiltration Over Symmetric Encrypted Non-C2 Protocol",
+                    "windows_eventids": [
+                        {
+                            "eventid": "3",
+                            "description": "A network connection was made using an application"
+                        },
+                        {
+                            "eventid": "23",
+                            "description": "File deletion activity"
+                        }
+                    ],
+                    "linux_auditd_logs": [
+                        {
+                            "type": "SOCKADDR",
+                            "description": "Network connection information"
+                        },
+                        {
+                            "type": "PATH",
+                            "description": "File deletion activity"
+                        }
+                    ]
+                },
+                {
+                    "sub_technique_id": "T1048.002",
+                    "sub_technique_name": "Exfiltration Over Asymmetric Encrypted Non-C2 Protocol",
+                    "windows_eventids": [
+                        {
+                            "eventid": "3",
+                            "description": "A network connection was made using an application"
+                        },
+                        {
+                            "eventid": "23",
+                            "description": "File deletion activity"
+                        }
+                    ],
+                    "linux_auditd_logs": [
+                        {
+                            "type": "SOCKADDR",
+                            "description": "Network connection information"
+                        },
+                        {
+                            "type": "PATH",
+                            "description": "File deletion activity"
+                        }
+                    ]
+                },
+                {
+                    "sub_technique_id": "T1048.003",
+                    "sub_technique_name": "Exfiltration Over Unencrypted Non-C2 Protocol",
+                    "windows_eventids": [
+                        {
+                            "eventid": "3",
+                            "description": "A network connection was made using an application"
+                        },
+                        {
+                            "eventid": "23",
+                            "description": "File deletion activity"
+                        }
+                    ],
+                    "linux_auditd_logs": [
+                        {
+                            "type": "SOCKADDR",
+                            "description": "Network connection information"
+                        },
+                        {
+                            "type": "PATH",
+                            "description": "File deletion activity"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "technique_id": "T1041",
+            "technique_name": "Exfiltration Over C2 Channel",
+            "windows_eventids": [
+                {
+                    "eventid": "3",
+                    "description": "A network connection was made using an application"
+                }
+            ],
+            "linux_auditd_logs": [
+                {
+                    "type": "SOCKADDR",
+                    "description": "Network connection information"
+                }
+            ]
+        },
+        {
+            "technique_id": "T1011",
+            "technique_name": "Exfiltration Over Other Network Medium",
+            "windows_eventids": [
+                {
+                    "eventid": "3",
+                    "description": "A network connection was made using an application"
+                }
+            ],
+            "linux_auditd_logs": [
+                {
+                    "type": "SOCKADDR",
+                    "description": "Network connection information"
+                }
+            ],
+            "sub_techniques": [
+                {
+                    "sub_technique_id": "T1011.001",
+                    "sub_technique_name": "Exfiltration Over Bluetooth",
+                    "windows_eventids": [
+                        {
+                            "eventid": "3",
+                            "description": "A network connection was made using an application"
+                        }
+                    ],
+                    "linux_auditd_logs": [
+                        {
+                            "type": "SOCKADDR",
+                            "description": "Network connection information"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "technique_id": "T1052",
+            "technique_name": "Exfiltration Over Physical Medium",
+            "windows_eventids": [
+                {
+                    "eventid": "6416",
+                    "description": "A new external device was detected by the system"
+                }
+            ],
+            "linux_auditd_logs": [
+                {
+                    "type": "KERNEL_DEVICE",
+                    "description": "External device connected to the system"
+                }
+            ],
+            "sub_techniques": [
+                {
+                    "sub_technique_id": "T1052.001",
+                    "sub_technique_name": "Exfiltration over USB",
+                    "windows_eventids": [
+                        {
+                          "eventid": "6416",
+                          "description": "A new external device was detected by the system"
+                        },
+                        {
+                          "eventid": "20001",
+                          "description": "A USB device was connected"
+                        },
+                        {
+                          "eventid": "20003",
+                          "description": "A USB device was disconnected"
+                        },
+                        {
+                          "eventid": "2100",
+                          "description": "A USB device was connected or disconnected"
+                        },
+                        {
+                          "eventid": "4663",
+                          "description": "An attempt was made to access an object"
+                        },
+                        {
+                          "eventid": "4656",
+                          "description": "A handle to an object was requested"
+                        }
+                      ],
+                      "linux_auditd_logs": [
+                        {
+                          "type": "KERNEL_DEVICE",
+                          "description": "External device connected to the system"
+                        }
+                      ]
+                }
+            ]
+        },
+        {
+            "technique_id": "T1567",
+            "technique_name": "Exfiltration Over Web Service",
+            "windows_eventids": [
+                {
+                    "eventid": "3",
+                    "description": "A network connection was made using an application"
+                }
+            ],
+            "linux_auditd_logs": [
+                {
+                    "type": "SOCKADDR",
+                    "description": "Network connection information"
+                }
+            ],
+            "sub_techniques": [
+                {
+                    "sub_technique_id": "T1567.001",
+                    "sub_technique_name": "Exfiltration to Code Repository",
+                    "windows_eventids": [
+                        {
+                            "eventid": "3",
+                            "description": "A network connection was made using an application"
+                        }
+                    ],
+                    "linux_auditd_logs": [
+                        {
+                            "type": "SOCKADDR",
+                            "description": "Network connection information"
+                        }
+                    ]
+                },
+                {
+                    "sub_technique_id": "T1567.002",
+                    "sub_technique_name": "Exfiltration to Cloud Storage",
+                    "windows_eventids": [
+                        {
+                            "eventid": "3",
+                            "description": "A network connection was made using an application"
+                        }
+                    ],
+                    "linux_auditd_logs": [
+                        {
+                            "type": "SOCKADDR",
+                            "description": "Network connection information"
+                        }
+                    ]
+                },
+                {
+                    "sub_technique_id": "T1029",
+                    "sub_technique_name": "Scheduled Transfer",
+                    "windows_eventids": [
+                        {
+                            "eventid": "3",
+                            "description": "A network connection was made using an application"
+                        },
+                        {
+                            "eventid": "4698",
+                            "description": "A scheduled task was created"
+                        }
+                    ],
+                    "linux_auditd_logs": [
+                        {
+                            "type": "SOCKADDR",
+                            "description": "Network connection information"
+                        },
+                        {
+                            "type": "CRON",
+                            "description": "A cron job was scheduled"
+                        }
+                    ]
+                },
+                {
+                    "sub_technique_id": "T1537",
+                    "sub_technique_name": "Transfer Data to Cloud Account",
+                    "windows_eventids": [
+                        {
+                            "eventid": "3",
+                            "description": "A network connection was made using an application"
+                        }
+                    ],
+                    "linux_auditd_logs": [
+                        {
+                            "type": "SOCKADDR",
+                            "description": "Network connection information"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
